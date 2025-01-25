@@ -55,18 +55,20 @@ public class JumperEffect : MonoBehaviour
                 timeElapsed = 0;
                 state = 2;
             }
-        } else if (state == 2) {
-            float t = timeElapsed / 0.05f;
-            float easedTime = EaseOut(t);
-            transform.localScale = Vector3.Lerp(endPosition_2, endPosition_3, easedTime);
-            // Incrementar el tiempo
-            timeElapsed += Time.deltaTime;
-            // Detener el movimiento cuando haya llegado al destino
-            if (timeElapsed >= duration) {
-                timeElapsed = 0;
-                state = 3;
-            }
-        } else if (state == 3) {
+        }
+        // else if (state == 2) {
+        //     float t = timeElapsed / 0.05f;
+        //     float easedTime = EaseOut(t);
+        //     transform.localScale = Vector3.Lerp(endPosition_2, endPosition_3, easedTime);
+        //     // Incrementar el tiempo
+        //     timeElapsed += Time.deltaTime;
+        //     // Detener el movimiento cuando haya llegado al destino
+        //     if (timeElapsed >= duration) {
+        //         timeElapsed = 0;
+        //         state = 3;
+        //     }
+        // }
+        else if (state == 2) {
             float t = timeElapsed / duration;
             float easedTime = EaseInOut(t);
             transform.localScale = Vector3.Lerp(endPosition_3, startPosition, easedTime);
