@@ -91,7 +91,8 @@ public class LevelManager : MonoBehaviour
             //musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
             currentBeats++;
             hasClicked = false;
-            if(currentBeats >= beatsToAdvance)
+            CheckPerformance();
+            if (currentBeats >= beatsToAdvance)
             {
                 currentBeats = 0;
                 // rollRt.anchoredPosition -= new Vector2(0, 100);
@@ -121,14 +122,43 @@ public class LevelManager : MonoBehaviour
             }
         }
         //
-        CheckPerformance();
+        //CheckPerformance();
     }
 
     void CheckPerformance()
     {
-        if (hasClicked)
+        // Music and performance
+        if (currentPerformance > 5 && currentMusicIntensity == 0)
         {
-
+            currentMusicIntensity = 1;
+            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+            currentHitMargin = goodHitMargin + 0.1f;
+            beatMarginIndicatorL.anchoredPosition = new Vector2(-150+(currentHitMargin * 150), 0);
+            beatMarginIndicatorR.anchoredPosition = new Vector2(150-(currentHitMargin * 150), 0);
+            currentBeats = 0;
+        }
+        if (currentPerformance >= 10 && currentMusicIntensity == 1)
+        {
+            currentMusicIntensity = 2;
+            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+            currentHitMargin = goodHitMargin + 0.2f;
+            beatMarginIndicatorL.anchoredPosition = new Vector2(-150 + (currentHitMargin * 150), 0);
+            beatMarginIndicatorR.anchoredPosition = new Vector2(150 - (currentHitMargin * 150), 0);
+            currentBeats = 0;
+        }
+        // Music and performance
+        if (currentPerformance <= 5 && currentMusicIntensity == 2)
+        {
+            currentMusicIntensity = 0;
+            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+            currentHitMargin = goodHitMargin + 0.0f;
+            beatMarginIndicatorL.anchoredPosition = new Vector2(-150 + (currentHitMargin * 150), 0);
+            beatMarginIndicatorR.anchoredPosition = new Vector2(150 - (currentHitMargin * 150), 0);
+            currentBeats = 0;
+        }
+        if (currentPerformance <= -10)
+        {
+            // You lose
         }
     }
 
@@ -153,23 +183,7 @@ public class LevelManager : MonoBehaviour
             // Bubble sounds
             bubbleEventEmitter.Play();
             bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
-            // Music and performance
-            if (currentPerformance > 5 && currentMusicIntensity == 0)
-            {
-                currentMusicIntensity = 1;
-                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-                currentHitMargin = goodHitMargin + 0.1f;
-                beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150, 0);
-                beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
-            }
-            if(currentPerformance >= 10 && currentMusicIntensity == 1)
-            {
-                currentMusicIntensity = 2;
-                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-                currentHitMargin = goodHitMargin + 0.2f;
-                beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150, 0);
-                beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
-            }
+            
         }
         else
         {
@@ -185,19 +199,7 @@ public class LevelManager : MonoBehaviour
             // Bubble sounds
             bubbleEventEmitter.Play();
             bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 0);
-            // Music and performance
-            if (currentPerformance <= 5 && currentMusicIntensity == 2)
-            {
-                currentMusicIntensity = 0;
-                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-                currentHitMargin = goodHitMargin + 0.0f;
-                beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150, 0);
-                beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
-            }
-            if (currentPerformance <= -10)
-            {
-                // You lose
-            }
+            
         }
     }
 
