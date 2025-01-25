@@ -32,10 +32,13 @@ public class LevelManager : MonoBehaviour
     public float goodHitMargin = 0.75f;
 
     private static LevelManager instance;
+    private FMODUnity.StudioEventEmitter musicEventEmitter;
+    private FMODUnity.StudioEventEmitter bubbleEventEmitter;
     private float currentBeatDuration = 0;
     private int currentBeats = 0;
     private int currentPerformance = 0;
     private int currentScore = 0;
+    private int currentMusicIntensity = 0;
 
     public static LevelManager Instance
     {
@@ -58,6 +61,9 @@ public class LevelManager : MonoBehaviour
         // };
         currentTimeAngry = timeAngry;
         currentTimeHappy = timeHappy;
+
+        musicEventEmitter = GameObject.Find("Music").GetComponent<FMODUnity.StudioEventEmitter>();
+        bubbleEventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
     }
 
     // Update is called once per frame
@@ -67,13 +73,17 @@ public class LevelManager : MonoBehaviour
         currentBeatDuration += dt;
         if(currentBeatDuration >= beatDuration)
         {
-            currentBeatDuration -= beatDuration;
+            //currentBeatDuration -= beatDuration;
+            currentBeatDuration = 0;
+            musicEventEmitter.Stop();
+            musicEventEmitter.Play();
+            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
             currentBeats++;
             if(currentBeats >= beatsToAdvance)
             {
                 currentBeats = 0;
                 rollRt.anchoredPosition -= new Vector2(0, 100);
-                Debug.Log("Adavancing panel");
+                // Debug.Log("Adavancing panel");
             }
         }
         // Barras de beat
@@ -111,6 +121,20 @@ public class LevelManager : MonoBehaviour
             performanceText.text = "Performance: " + currentPerformance;
             currentScore++;
             scoreText.text = "Score: +" + currentScore;
+            // Bubble sounds
+            bubbleEventEmitter.Play();
+            bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
+            // Music and performance
+            if (currentPerformance > 5 && currentMusicIntensity == 0)
+            {
+                currentMusicIntensity = 1;
+                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+            }
+            if(currentPerformance >= 10 && currentMusicIntensity == 1)
+            {
+                currentMusicIntensity = 2;
+                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+            }
         }
         else
         {
@@ -123,7 +147,16 @@ public class LevelManager : MonoBehaviour
             currentPerformance--;
             currentPerformance = Mathf.Clamp(currentPerformance, -10, 10);
             performanceText.text = "Performance: " + currentPerformance;
-            if(currentPerformance <= -10)
+            // Bubble sounds
+            bubbleEventEmitter.Play();
+            bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 0);
+            // Music and performance
+            if (currentPerformance <= 5 && currentMusicIntensity == 2)
+            {
+                currentMusicIntensity = 0;
+                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+            }
+            if (currentPerformance <= -10)
             {
                 // You lose
             }
