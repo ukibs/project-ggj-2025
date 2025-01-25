@@ -264,10 +264,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 192688775
-      Data2: 1214327161
-      Data3: 217499282
-      Data4: -939029427
+      Data1: 568070589
+      Data2: 1083013657
+      Data3: -397932384
+      Data4: -754931570
     Path: event:/Music
   Event: 
   EventPlayTrigger: 1
