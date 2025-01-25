@@ -31,7 +31,7 @@ public class BubbleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"{transform.position.y + bounds.y}, {transform.position.y - bounds.y}, {Screen.height}");
+        // Debug.Log($"{transform.position.y + bounds.y}, {transform.position.y - bounds.y}, {Screen.height}");
         bool outOfAxisX = (transform.position.x + bounds.x >= Screen.width || transform.position.x - bounds.x <= 0 || transform.position.y + bounds.x >= Screen.height);
         bool outOfAxisY = (transform.position.y + bounds.y >= Screen.height || transform.position.y - bounds.y <= 0  || transform.position.x + bounds.y >= Screen.width);
         if (!collision) {
