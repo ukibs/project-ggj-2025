@@ -112,7 +112,6 @@ public class BouncyEffect : MonoBehaviour
 // }
 
     IEnumerator Reset() {
-        print("Hello?");
         yield return new WaitForSeconds(resetTime);
         for (int i = 0; i < transform.childCount; i++) {
             delay[i] = maxDelay;
