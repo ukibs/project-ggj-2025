@@ -25,5 +25,14 @@ public class MusicTester : MonoBehaviour
         {
             fmodComponent.EventInstance.setParameterByName("MusicIntensity", 2);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            fmodComponent.EventInstance.setParameterByName("MusicIntensity", 3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            fmodComponent.EventInstance.setParameterByName("MusicIntensity", 6);
+        }
     }
 }
