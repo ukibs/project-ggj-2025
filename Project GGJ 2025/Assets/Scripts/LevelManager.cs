@@ -26,10 +26,12 @@ public class LevelManager : MonoBehaviour
     public GameObject badIndicator;
     public TMP_Text scoreText;
     public TMP_Text performanceText;
-    //public TMP_Text fmodTimeText;
+    public TMP_Text fmodTimeText;
 
     public Image rythmIndicatorImageL;
     public Image rythmIndicatorImageR;
+
+    public GameObject tileObject;
 
     [Header("Parameters")]
     public int beatDuration = 500;
@@ -57,6 +59,7 @@ public class LevelManager : MonoBehaviour
     private bool hasClicked = false;
     private int fmodPreviousTime = 0;
     private int fmodDeltaTime = 0;
+    private bool gameOver = false;
 
     public static LevelManager Instance
     {
@@ -87,16 +90,20 @@ public class LevelManager : MonoBehaviour
         musicEventEmitter = GameObject.Find("Music").GetComponent<FMODUnity.StudioEventEmitter>();
         bubbleEventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
         streakEventEmitter = GameObject.Find("Streak Effects").GetComponent<FMODUnity.StudioEventEmitter>();
+
+        GenerateTiles();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameOver) return;
+
         float dt = Time.deltaTime;
         int fmodTime;
         musicEventEmitter.EventInstance.getTimelinePosition(out fmodTime);
-        //fmodTimeText.text = "FTime: " + fmodTime;
-        if(fmodPreviousTime > fmodTime)
+        fmodTimeText.text = "FTime: " + fmodTime;
+        if (fmodPreviousTime > fmodTime)
         {
             fmodPreviousTime = 8000 * (currentMusicIntensity);
         }
@@ -171,53 +178,82 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    void GenerateTiles()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            RectTransform nextTile = Instantiate(tileObject, rollController.transform).GetComponent<RectTransform>();
+            nextTile.anchoredPosition = Vector2.up * 600 * (i + 1);
+        }
+    }
+
     void CheckPerformance()
     {
-        // Music and performance
-        if (currentPerformance > 5 && currentMusicIntensity == 0)
+        //
+        int currentStreakIntensity = currentPerformance / 5;
+        currentStreakIntensity = (int)MathF.Max(0, currentStreakIntensity);
+        if(currentStreakIntensity != currentMusicIntensity)
         {
-            currentMusicIntensity = 1;
+            Debug.Log("Current performance: " + currentPerformance + " - Current streak intensity: " + currentStreakIntensity + " - Current music intensity: " + currentMusicIntensity);
+            currentMusicIntensity = currentStreakIntensity;
             musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-            currentHitMargin = goodHitMargin - 0.1f;
+            currentHitMargin = goodHitMargin - (0.1f * currentMusicIntensity);
             beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
             beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
-            currentBeats = 0;
+            //currentBeats = 0;
             // Streak sounds
             streakEventEmitter.Play();
             //streakEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
         }
-        if (currentPerformance >= 10 && currentMusicIntensity == 1)
-        {
-            currentMusicIntensity = 2;
-            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-            currentHitMargin = goodHitMargin - 0.2f;
-            beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
-            beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
-            currentBeats = 0;
-            // Streak sounds
-            streakEventEmitter.Play();
-            //streakEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
-        }
+
         // Music and performance
-        if (currentPerformance <= 5 && currentMusicIntensity == 2)
-        {
-            currentMusicIntensity = 0;
-            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-            currentHitMargin = goodHitMargin + 0.0f;
-            beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
-            beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
-            currentBeats = 0;
-        }
+        //if (currentPerformance > 5 && currentMusicIntensity == 0)
+        //{
+        //    currentMusicIntensity = 1;
+        //    musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+        //    currentHitMargin = goodHitMargin - 0.1f;
+        //    beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
+        //    beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
+        //    currentBeats = 0;
+        //    // Streak sounds
+        //    streakEventEmitter.Play();
+        //    //streakEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
+        //}
+        //if (currentPerformance >= 10 && currentMusicIntensity == 1)
+        //{
+        //    currentMusicIntensity = 2;
+        //    musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+        //    currentHitMargin = goodHitMargin - 0.2f;
+        //    beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
+        //    beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
+        //    currentBeats = 0;
+        //    // Streak sounds
+        //    streakEventEmitter.Play();
+        //    //streakEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
+        //}
+        //// Music and performance
+        //if (currentPerformance <= 5 && currentMusicIntensity == 2)
+        //{
+        //    currentMusicIntensity = 0;
+        //    musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+        //    currentHitMargin = goodHitMargin + 0.0f;
+        //    beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
+        //    beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
+        //    currentBeats = 0;
+        //}
         if (currentPerformance <= -5)
         {
             // You lose
             musicEventEmitter.Stop();
             // Pez muerto
+            gameOver = true;
+            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", 6);
         }
     }
 
     public void ExplodeBubble()
     {
+        if (gameOver) return;
         //Debug.Log("Bubble exploded");
         // Reset wait time
         currentTimeWait = timeWait;
@@ -225,7 +261,7 @@ public class LevelManager : MonoBehaviour
         // 
         hasClicked = true;
         float fillAmount = (float)currentBeatDuration / (float)beatDuration;
-        if(fillAmount <= goodHitMargin)
+        if(fillAmount <= currentHitMargin)
         {
             //Debug.Log("Good");
             StartCoroutine(ActivateAndDeactivate(goodIndicator));
@@ -234,10 +270,10 @@ public class LevelManager : MonoBehaviour
             currentTimeHappy = timeHappy;
             // StartCoroutine(ActivateAndDeactivateAnimation("Happy"));
             currentPerformance++;
-            currentPerformance = Mathf.Clamp(currentPerformance, -10, 10);
+            currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
             performanceText.text = "Performance: " + currentPerformance;
             currentScore += 1 + currentMusicIntensity;
-            scoreText.text = "Score: +" + currentScore;
+            scoreText.text = "Score: " + currentScore;
             // Bubble sounds
             bubbleEventEmitter.Play();
             bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
@@ -266,7 +302,7 @@ public class LevelManager : MonoBehaviour
         catfishAnimator.SetBool("Happy", false);
         currentTimeAngry = timeAngry;
         currentPerformance--;
-        currentPerformance = Mathf.Clamp(currentPerformance, -10, 10);
+        currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
         performanceText.text = "Performance: " + currentPerformance;
         // Bubble sounds
         bubbleEventEmitter.Play();
