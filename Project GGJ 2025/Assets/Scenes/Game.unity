@@ -27064,9 +27064,12 @@ MonoBehaviour:
   badIndicator: {fileID: 1918117805}
   scoreText: {fileID: 1060914544}
   performanceText: {fileID: 1552027587}
+  rythmIndicatorImageL: {fileID: 1268150749}
+  rythmIndicatorImageR: {fileID: 822766079}
   beatDuration: 500
   beatsToAdvance: 8
   goodHitMargin: 0.7
+  maxMusicIntensity: 3
   timeAngry: 5
   timeHappy: 5
   timeWait: 10
