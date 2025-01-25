@@ -35,6 +35,7 @@ public class BubbleController : MonoBehaviour
         }
         else
         {
+            LevelManager.Instance.BadBubble();
             eventEmitter.Play();
             eventEmitter.EventInstance.setParameterByName("Burbuja", 0);
         }

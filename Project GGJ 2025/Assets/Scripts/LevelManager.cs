@@ -10,8 +10,6 @@ public class LevelManager : MonoBehaviour
     
     [Header("Components")]
     //public GameObject catfish;
-    [SerializeField] float timeWait = 10f;
-    float currentTimeWait;
     public Animator catfishAnimator;
     public RectTransform rollRt;
     public RollController rollController;
@@ -28,9 +26,10 @@ public class LevelManager : MonoBehaviour
     public GameObject badIndicator;
     public TMP_Text scoreText;
     public TMP_Text performanceText;
+    public TMP_Text fmodTimeText;
 
     [Header("Parameters")]
-    public float beatDuration = 1f;
+    public int beatDuration = 500;
     public int beatsToAdvance = 8;
     public float goodHitMargin = 0.75f;
     [SerializeField] float timeAngry = 5f;
@@ -44,12 +43,14 @@ public class LevelManager : MonoBehaviour
     private FMODUnity.StudioEventEmitter musicEventEmitter;
     private FMODUnity.StudioEventEmitter bubbleEventEmitter;
     private FMODUnity.StudioEventEmitter streakEventEmitter;
-    private float currentBeatDuration = 0;
+    private int currentBeatDuration = 0;
     private int currentBeats = 0;
     private int currentPerformance = 0;
     private int currentScore = 0;
     private int currentMusicIntensity = 0;
     private bool hasClicked = false;
+    private int fmodPreviousTime = 0;
+    private int fmodDeltaTime = 0;
 
     public static LevelManager Instance
     {
@@ -75,7 +76,6 @@ public class LevelManager : MonoBehaviour
         // };
         currentTimeAngry = timeAngry;
         currentTimeHappy = timeHappy;
-        currentTimeWait  = timeWait;
 
         musicEventEmitter = GameObject.Find("Music").GetComponent<FMODUnity.StudioEventEmitter>();
         bubbleEventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
@@ -86,8 +86,20 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         float dt = Time.deltaTime;
-        currentBeatDuration += dt;
-        if(currentBeatDuration >= beatDuration)
+        int fmodTime;
+        musicEventEmitter.EventInstance.getTimelinePosition(out fmodTime);
+        fmodTimeText.text = "FTime: " + fmodTime;
+        if(fmodPreviousTime > fmodTime)
+        {
+            fmodPreviousTime = 8000 * (currentMusicIntensity);
+        }
+        fmodDeltaTime = fmodTime - fmodPreviousTime;
+        fmodPreviousTime = fmodTime;
+
+        //Debug.Log("Fmod time: ")
+        //currentBeatDuration += dt;
+        currentBeatDuration += fmodDeltaTime;
+        if (currentBeatDuration >= beatDuration)
         {
             //currentBeatDuration -= beatDuration;
             currentBeatDuration = 0;
@@ -103,41 +115,36 @@ public class LevelManager : MonoBehaviour
                 // rollRt.anchoredPosition -= new Vector2(0, 100);
                 rollController.RollLine();
                 // Debug.Log("Adavancing panel");
-                musicEventEmitter.Stop();
-                musicEventEmitter.Play();
-                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+                //musicEventEmitter.Stop();
+                //musicEventEmitter.Play();
+                //musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+                //fmodPreviousTime = 16000 * (currentMusicIntensity);
+                //Debug.Log("Current music inteisity: " + currentMusicIntensity);
             }
         }
         // Barras de beat
         //beatFiller1.fillAmount = currentBeatDuration / beatDuration;
         //beatFiller2.fillAmount = currentBeatDuration / beatDuration;
-        rythmIndicatorL.anchoredPosition = new Vector2(-150 +(currentBeatDuration / beatDuration * 150), 0);
-        rythmIndicatorR.anchoredPosition = new Vector2(150 -(currentBeatDuration / beatDuration * 150), 0);
+        rythmIndicatorL.anchoredPosition = new Vector2(-150 +((float)currentBeatDuration / (float)beatDuration * 150), 0);
+        rythmIndicatorR.anchoredPosition = new Vector2(150 -((float)currentBeatDuration / (float)beatDuration * 150), 0);
         // Animations
-        // - Animacion de felicidad
         if (catfishAnimator.GetBool("Happy")) {
             currentTimeHappy -= dt;
             if (currentTimeHappy <= 0) {
                 catfishAnimator.SetBool("Happy", false);
             }
         }
-        // - Animacion de enfado
         if (catfishAnimator.GetBool("Angry")) {
             currentTimeAngry -= dt;
             if (currentTimeAngry <= 0) {
                 catfishAnimator.SetBool("Angry", false);
             }
         }
-        // - Animacion de espera
-        if (!catfishAnimator.GetBool("Angry") && !catfishAnimator.GetBool("Happy")) {
-            if (currentTimeWait >= 0) {
-                currentTimeWait -= dt;
-            } else {
-                catfishAnimator.SetBool("Wait", true);
-            }
-        }
         //
-        //CheckPerformance();
+        if (!hasClicked)
+        {
+            // Pierdes puntos
+        }
     }
 
     void CheckPerformance()
@@ -177,24 +184,22 @@ public class LevelManager : MonoBehaviour
             beatMarginIndicatorR.anchoredPosition = new Vector2(150 - (currentHitMargin * 150), 0);
             currentBeats = 0;
         }
-        if (currentPerformance <= -10)
+        if (currentPerformance <= -5)
         {
             // You lose
+            musicEventEmitter.Stop();
+            // Pez muerto
         }
     }
 
     public void ExplodeBubble()
     {
-        Debug.Log("Bubble exploded");
-        // Reset wait time
-        currentTimeWait  = timeWait;
-        catfishAnimator.SetBool("Wait", false);
-        // 
+        //Debug.Log("Bubble exploded");
         hasClicked = true;
-        float fillAmount = currentBeatDuration / beatDuration;
+        float fillAmount = (float)currentBeatDuration / (float)beatDuration;
         if(fillAmount <= goodHitMargin)
         {
-            Debug.Log("Good");
+            //Debug.Log("Good");
             StartCoroutine(ActivateAndDeactivate(goodIndicator));
             catfishAnimator.SetBool("Happy", true);
             catfishAnimator.SetBool("Angry", false);
@@ -212,7 +217,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Bad");
+            //Debug.Log("Bad");
             StartCoroutine(ActivateAndDeactivate(badIndicator));
             // StartCoroutine(ActivateAndDeactivateAnimation("Angry"));
             catfishAnimator.SetBool("Angry", true);
@@ -224,8 +229,12 @@ public class LevelManager : MonoBehaviour
             // Bubble sounds
             bubbleEventEmitter.Play();
             bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 0);
-            
         }
+    }
+
+    public void BadBubble()
+    {
+        // Pierdes puntos
     }
 
     IEnumerator ActivateAndDeactivate(GameObject gameObject)
