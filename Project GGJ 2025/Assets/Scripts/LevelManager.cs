@@ -102,7 +102,7 @@ public class LevelManager : MonoBehaviour
         float dt = Time.deltaTime;
         int fmodTime;
         musicEventEmitter.EventInstance.getTimelinePosition(out fmodTime);
-        fmodTimeText.text = "FTime: " + fmodTime;
+        fmodTimeText.text = "FTime: " + currentMusicIntensity + " - " + fmodTime;
         if (fmodPreviousTime > fmodTime)
         {
             fmodPreviousTime = 8000 * (currentMusicIntensity);
