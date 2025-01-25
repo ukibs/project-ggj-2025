@@ -134,7 +134,7 @@ public class LevelManager : MonoBehaviour
         {
             currentMusicIntensity = 1;
             musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-            currentHitMargin = goodHitMargin + 0.1f;
+            currentHitMargin = goodHitMargin - 0.1f;
             beatMarginIndicatorL.anchoredPosition = new Vector2(-150+(currentHitMargin * 150), 0);
             beatMarginIndicatorR.anchoredPosition = new Vector2(150-(currentHitMargin * 150), 0);
             currentBeats = 0;
@@ -146,7 +146,7 @@ public class LevelManager : MonoBehaviour
         {
             currentMusicIntensity = 2;
             musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
-            currentHitMargin = goodHitMargin + 0.2f;
+            currentHitMargin = goodHitMargin - 0.2f;
             beatMarginIndicatorL.anchoredPosition = new Vector2(-150 + (currentHitMargin * 150), 0);
             beatMarginIndicatorR.anchoredPosition = new Vector2(150 - (currentHitMargin * 150), 0);
             currentBeats = 0;
@@ -175,7 +175,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Bubble exploded");
         hasClicked = true;
         float fillAmount = currentBeatDuration / beatDuration;
-        if(fillAmount > goodHitMargin)
+        if(fillAmount <= goodHitMargin)
         {
             Debug.Log("Good");
             StartCoroutine(ActivateAndDeactivate(goodIndicator));
