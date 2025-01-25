@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     
     [Header("Components")]
     //public GameObject catfish;
+    [SerializeField] float timeWait = 10f;
+    float currentTimeWait;
     public Animator catfishAnimator;
     public RectTransform rollRt;
     public RollController rollController;
@@ -73,6 +75,7 @@ public class LevelManager : MonoBehaviour
         // };
         currentTimeAngry = timeAngry;
         currentTimeHappy = timeHappy;
+        currentTimeWait  = timeWait;
 
         musicEventEmitter = GameObject.Find("Music").GetComponent<FMODUnity.StudioEventEmitter>();
         bubbleEventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
@@ -111,16 +114,26 @@ public class LevelManager : MonoBehaviour
         rythmIndicatorL.anchoredPosition = new Vector2(-150 +(currentBeatDuration / beatDuration * 150), 0);
         rythmIndicatorR.anchoredPosition = new Vector2(150 -(currentBeatDuration / beatDuration * 150), 0);
         // Animations
+        // - Animacion de felicidad
         if (catfishAnimator.GetBool("Happy")) {
             currentTimeHappy -= dt;
             if (currentTimeHappy <= 0) {
                 catfishAnimator.SetBool("Happy", false);
             }
         }
+        // - Animacion de enfado
         if (catfishAnimator.GetBool("Angry")) {
             currentTimeAngry -= dt;
             if (currentTimeAngry <= 0) {
                 catfishAnimator.SetBool("Angry", false);
+            }
+        }
+        // - Animacion de espera
+        if (!catfishAnimator.GetBool("Angry") && !catfishAnimator.GetBool("Happy")) {
+            if (currentTimeWait >= 0) {
+                currentTimeWait -= dt;
+            } else {
+                catfishAnimator.SetBool("Wait", true);
             }
         }
         //
@@ -173,6 +186,10 @@ public class LevelManager : MonoBehaviour
     public void ExplodeBubble()
     {
         Debug.Log("Bubble exploded");
+        // Reset wait time
+        currentTimeWait  = timeWait;
+        catfishAnimator.SetBool("Wait", false);
+        // 
         hasClicked = true;
         float fillAmount = currentBeatDuration / beatDuration;
         if(fillAmount <= goodHitMargin)

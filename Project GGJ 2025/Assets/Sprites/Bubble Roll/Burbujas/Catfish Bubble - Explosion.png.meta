@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 5efa3d4a8c15d8242afc4cee96db09d5
+guid: a84703aa6281dd44fb307661cc54065d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,8 +37,8 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
   nPOTScale: 0
   lightmap: 0
@@ -52,7 +52,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -110,45 +110,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: siruloIdle-Sheet_0
+      name: Catfish Bubble - Explosion_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 31
-        height: 30
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 642f1c02776889c41b63fa115e3597ec
-      internalID: 1389464161
+      spriteID: 608d5ba8e2da43b48b03320fc1684c57
+      internalID: 1081470564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: siruloIdle-Sheet_1
+      name: Catfish Bubble - Explosion_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 2
-        width: 31
-        height: 30
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 984fc243525522b41bc83a04f884c1d8
-      internalID: 516924962
+      spriteID: 5c4537d4907979c47ac34fe1e06e7ada
+      internalID: -1692545907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catfish Bubble - Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4e3c9c619787c42bb22ceaebaa52cf
+      internalID: 172735838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catfish Bubble - Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb3dd305b5ff26408890e9b7f598900
+      internalID: -2068824078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catfish Bubble - Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afe4e4df2689e148bc5080cb7b54b33
+      internalID: 1186015470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catfish Bubble - Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbb923e08adbfd4e9e3c78195daaed4
+      internalID: 622261085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catfish Bubble - Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656d5865979f4b740a6da887a54be4dc
+      internalID: 232325061
       vertices: []
       indices: 
       edges: []
@@ -157,7 +267,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3a44584f303250441a867492f41b4e3b
+    spriteID: 7e85a0a0952ed334499c5162455a4cc9
     internalID: 0
     vertices: []
     indices: 
@@ -167,8 +277,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      siruloIdle-Sheet_0: 1389464161
-      siruloIdle-Sheet_1: 516924962
+      Catfish Bubble - Explosion_0: 1081470564
+      Catfish Bubble - Explosion_1: -1692545907
+      Catfish Bubble - Explosion_2: 172735838
+      Catfish Bubble - Explosion_3: -2068824078
+      Catfish Bubble - Explosion_4: 1186015470
+      Catfish Bubble - Explosion_5: 622261085
+      Catfish Bubble - Explosion_6: 232325061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

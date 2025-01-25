@@ -27053,6 +27053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ec53d0b1332d54fbcccb1cb2200c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeWait: 10
   catfishAnimator: {fileID: 1820623851}
   rollRt: {fileID: 485807223}
   rollController: {fileID: 485807224}
@@ -27633,7 +27634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -7.4, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820623849
