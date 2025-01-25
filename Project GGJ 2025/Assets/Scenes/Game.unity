@@ -13513,7 +13513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -27053,7 +27053,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ec53d0b1332d54fbcccb1cb2200c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeWait: 10
   catfishAnimator: {fileID: 1820623851}
   rollRt: {fileID: 485807223}
   rollController: {fileID: 485807224}
@@ -27065,11 +27064,12 @@ MonoBehaviour:
   badIndicator: {fileID: 1918117805}
   scoreText: {fileID: 1060914544}
   performanceText: {fileID: 1552027587}
-  beatDuration: 1
-  beatsToAdvance: 6
-  goodHitMargin: 0.5
+  beatDuration: 500
+  beatsToAdvance: 8
+  goodHitMargin: 0.7
   timeAngry: 5
   timeHappy: 5
+  timeWait: 10
 --- !u!4 &1799711572
 Transform:
   m_ObjectHideFlags: 0
@@ -34517,11 +34517,11 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1799711572}
   - {fileID: 1837781701}
   - {fileID: 50820891}
   - {fileID: 2023552023}
   - {fileID: 644816162}
-  - {fileID: 1799711572}
   - {fileID: 1526340711}
   - {fileID: 686851747}
   - {fileID: 2078096840}

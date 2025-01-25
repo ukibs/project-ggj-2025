@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     public GameObject badIndicator;
     public TMP_Text scoreText;
     public TMP_Text performanceText;
-    public TMP_Text fmodTimeText;
+    //public TMP_Text fmodTimeText;
 
     [Header("Parameters")]
     public int beatDuration = 500;
@@ -36,6 +36,8 @@ public class LevelManager : MonoBehaviour
     float currentTimeAngry;
     [SerializeField] float timeHappy = 5f;
     float currentTimeHappy;
+    [SerializeField] float timeWait = 10f;
+    float currentTimeWait;
     // Dictionary<string, float> statesDurations;
     float currentHitMargin;
 
@@ -76,6 +78,7 @@ public class LevelManager : MonoBehaviour
         // };
         currentTimeAngry = timeAngry;
         currentTimeHappy = timeHappy;
+        currentTimeWait = timeWait;
 
         musicEventEmitter = GameObject.Find("Music").GetComponent<FMODUnity.StudioEventEmitter>();
         bubbleEventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
@@ -88,7 +91,7 @@ public class LevelManager : MonoBehaviour
         float dt = Time.deltaTime;
         int fmodTime;
         musicEventEmitter.EventInstance.getTimelinePosition(out fmodTime);
-        fmodTimeText.text = "FTime: " + fmodTime;
+        //fmodTimeText.text = "FTime: " + fmodTime;
         if(fmodPreviousTime > fmodTime)
         {
             fmodPreviousTime = 8000 * (currentMusicIntensity);
@@ -128,16 +131,30 @@ public class LevelManager : MonoBehaviour
         rythmIndicatorL.anchoredPosition = new Vector2(-150 +((float)currentBeatDuration / (float)beatDuration * 150), 0);
         rythmIndicatorR.anchoredPosition = new Vector2(150 -((float)currentBeatDuration / (float)beatDuration * 150), 0);
         // Animations
+        // - Animacion de felicidad
         if (catfishAnimator.GetBool("Happy")) {
             currentTimeHappy -= dt;
             if (currentTimeHappy <= 0) {
                 catfishAnimator.SetBool("Happy", false);
             }
         }
+        // - Animacion de enfado
         if (catfishAnimator.GetBool("Angry")) {
             currentTimeAngry -= dt;
             if (currentTimeAngry <= 0) {
                 catfishAnimator.SetBool("Angry", false);
+            }
+        }
+        // - Animacion de espera
+        if (!catfishAnimator.GetBool("Angry") && !catfishAnimator.GetBool("Happy"))
+        {
+            if (currentTimeWait >= 0)
+            {
+                currentTimeWait -= dt;
+            }
+            else
+            {
+                catfishAnimator.SetBool("Wait", true);
             }
         }
         //
@@ -195,6 +212,10 @@ public class LevelManager : MonoBehaviour
     public void ExplodeBubble()
     {
         //Debug.Log("Bubble exploded");
+        // Reset wait time
+        currentTimeWait = timeWait;
+        catfishAnimator.SetBool("Wait", false);
+        // 
         hasClicked = true;
         float fillAmount = (float)currentBeatDuration / (float)beatDuration;
         if(fillAmount <= goodHitMargin)
