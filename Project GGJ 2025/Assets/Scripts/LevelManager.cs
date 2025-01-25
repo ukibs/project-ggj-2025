@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour
     private static LevelManager instance;
     private FMODUnity.StudioEventEmitter musicEventEmitter;
     private FMODUnity.StudioEventEmitter bubbleEventEmitter;
+    private FMODUnity.StudioEventEmitter streakEventEmitter;
     private float currentBeatDuration = 0;
     private int currentBeats = 0;
     private int currentPerformance = 0;
@@ -75,6 +76,7 @@ public class LevelManager : MonoBehaviour
 
         musicEventEmitter = GameObject.Find("Music").GetComponent<FMODUnity.StudioEventEmitter>();
         bubbleEventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
+        streakEventEmitter = GameObject.Find("Streak Effects").GetComponent<FMODUnity.StudioEventEmitter>();
     }
 
     // Update is called once per frame
@@ -136,6 +138,9 @@ public class LevelManager : MonoBehaviour
             beatMarginIndicatorL.anchoredPosition = new Vector2(-150+(currentHitMargin * 150), 0);
             beatMarginIndicatorR.anchoredPosition = new Vector2(150-(currentHitMargin * 150), 0);
             currentBeats = 0;
+            // Streak sounds
+            streakEventEmitter.Play();
+            //streakEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
         }
         if (currentPerformance >= 10 && currentMusicIntensity == 1)
         {
@@ -145,6 +150,9 @@ public class LevelManager : MonoBehaviour
             beatMarginIndicatorL.anchoredPosition = new Vector2(-150 + (currentHitMargin * 150), 0);
             beatMarginIndicatorR.anchoredPosition = new Vector2(150 - (currentHitMargin * 150), 0);
             currentBeats = 0;
+            // Streak sounds
+            streakEventEmitter.Play();
+            //streakEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
         }
         // Music and performance
         if (currentPerformance <= 5 && currentMusicIntensity == 2)
