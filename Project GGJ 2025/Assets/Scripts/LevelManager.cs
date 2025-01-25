@@ -7,20 +7,21 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    
     [Header("Components")]
-    public GameObject catfish;
-    Animator catfishAnimator;
-    [SerializeField] float timeAngry = 5f;
-    float currentTimeAngry;
-    [SerializeField] float timeHappy = 5f;
-    float currentTimeHappy;
-    // Dictionary<string, float> statesDurations;
-
+    //public GameObject catfish;
+    public Animator catfishAnimator;
     public RectTransform rollRt;
-    public Image beatFiller1;
-    public Image beatMarginFiller1;
-    public Image beatFiller2;
-    public Image beatMarginFiller2;
+    public RollController rollController;
+    //public Image beatFiller1;
+    //public Image beatMarginFiller1;
+    //public Image beatFiller2;
+    //public Image beatMarginFiller2;
+    public RectTransform beatMarginIndicatorL;
+    public RectTransform beatMarginIndicatorR;
+    public RectTransform rythmIndicatorL;
+    public RectTransform rythmIndicatorR;
+
     public GameObject goodIndicator;
     public GameObject badIndicator;
     public TMP_Text scoreText;
@@ -28,8 +29,14 @@ public class LevelManager : MonoBehaviour
 
     [Header("Parameters")]
     public float beatDuration = 1f;
-    public int beatsToAdvance = 6;
+    public int beatsToAdvance = 8;
     public float goodHitMargin = 0.75f;
+    [SerializeField] float timeAngry = 5f;
+    float currentTimeAngry;
+    [SerializeField] float timeHappy = 5f;
+    float currentTimeHappy;
+    // Dictionary<string, float> statesDurations;
+    float currentHitMargin;
 
     private static LevelManager instance;
     private FMODUnity.StudioEventEmitter musicEventEmitter;
@@ -39,6 +46,7 @@ public class LevelManager : MonoBehaviour
     private int currentPerformance = 0;
     private int currentScore = 0;
     private int currentMusicIntensity = 0;
+    private bool hasClicked = false;
 
     public static LevelManager Instance
     {
@@ -52,9 +60,12 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        beatMarginFiller1.fillAmount = goodHitMargin;
-        beatMarginFiller2.fillAmount = goodHitMargin;
-        catfishAnimator = catfish.GetComponent<Animator>();
+        currentHitMargin = goodHitMargin;
+        //beatMarginFiller1.fillAmount = goodHitMargin;
+        //beatMarginFiller2.fillAmount = goodHitMargin;
+        beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150,0);
+        beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
+        //catfishAnimator = catfish.GetComponent<Animator>();
         // statesDurations = new() {
         //     {"Angry", timeAngry},
         //     {"Happy", timeHappy}
@@ -75,20 +86,27 @@ public class LevelManager : MonoBehaviour
         {
             //currentBeatDuration -= beatDuration;
             currentBeatDuration = 0;
-            musicEventEmitter.Stop();
-            musicEventEmitter.Play();
-            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+            //musicEventEmitter.Stop();
+            //musicEventEmitter.Play();
+            //musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
             currentBeats++;
+            hasClicked = false;
             if(currentBeats >= beatsToAdvance)
             {
                 currentBeats = 0;
-                rollRt.anchoredPosition -= new Vector2(0, 100);
+                // rollRt.anchoredPosition -= new Vector2(0, 100);
+                rollController.RollLine();
                 // Debug.Log("Adavancing panel");
+                musicEventEmitter.Stop();
+                musicEventEmitter.Play();
+                musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
             }
         }
         // Barras de beat
-        beatFiller1.fillAmount = currentBeatDuration / beatDuration;
-        beatFiller2.fillAmount = currentBeatDuration / beatDuration;
+        //beatFiller1.fillAmount = currentBeatDuration / beatDuration;
+        //beatFiller2.fillAmount = currentBeatDuration / beatDuration;
+        rythmIndicatorL.anchoredPosition = new Vector2(-150 +(currentBeatDuration / beatDuration * 150), 0);
+        rythmIndicatorR.anchoredPosition = new Vector2(150 -(currentBeatDuration / beatDuration * 150), 0);
         // Animations
         if (catfishAnimator.GetBool("Happy")) {
             currentTimeHappy -= dt;
@@ -102,11 +120,22 @@ public class LevelManager : MonoBehaviour
                 catfishAnimator.SetBool("Angry", false);
             }
         }
+        //
+        CheckPerformance();
+    }
+
+    void CheckPerformance()
+    {
+        if (hasClicked)
+        {
+
+        }
     }
 
     public void ExplodeBubble()
     {
         Debug.Log("Bubble exploded");
+        hasClicked = true;
         float fillAmount = currentBeatDuration / beatDuration;
         if(fillAmount > goodHitMargin)
         {
@@ -119,7 +148,7 @@ public class LevelManager : MonoBehaviour
             currentPerformance++;
             currentPerformance = Mathf.Clamp(currentPerformance, -10, 10);
             performanceText.text = "Performance: " + currentPerformance;
-            currentScore++;
+            currentScore += 1 + currentMusicIntensity;
             scoreText.text = "Score: +" + currentScore;
             // Bubble sounds
             bubbleEventEmitter.Play();
@@ -129,11 +158,17 @@ public class LevelManager : MonoBehaviour
             {
                 currentMusicIntensity = 1;
                 musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+                currentHitMargin = goodHitMargin + 0.1f;
+                beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150, 0);
+                beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
             }
             if(currentPerformance >= 10 && currentMusicIntensity == 1)
             {
                 currentMusicIntensity = 2;
                 musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+                currentHitMargin = goodHitMargin + 0.2f;
+                beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150, 0);
+                beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
             }
         }
         else
@@ -155,6 +190,9 @@ public class LevelManager : MonoBehaviour
             {
                 currentMusicIntensity = 0;
                 musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
+                currentHitMargin = goodHitMargin + 0.0f;
+                beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150, 0);
+                beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
             }
             if (currentPerformance <= -10)
             {
