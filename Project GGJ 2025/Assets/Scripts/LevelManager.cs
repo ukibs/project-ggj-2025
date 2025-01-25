@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +8,14 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     [Header("Components")]
+    public GameObject catfish;
+    Animator catfishAnimator;
+    [SerializeField] float timeAngry = 5f;
+    float currentTimeAngry;
+    [SerializeField] float timeHappy = 5f;
+    float currentTimeHappy;
+    // Dictionary<string, float> statesDurations;
+
     public RectTransform rollRt;
     public Image beatFiller1;
     public Image beatMarginFiller1;
@@ -41,6 +51,13 @@ public class LevelManager : MonoBehaviour
         instance = this;
         beatMarginFiller1.fillAmount = goodHitMargin;
         beatMarginFiller2.fillAmount = goodHitMargin;
+        catfishAnimator = catfish.GetComponent<Animator>();
+        // statesDurations = new() {
+        //     {"Angry", timeAngry},
+        //     {"Happy", timeHappy}
+        // };
+        currentTimeAngry = timeAngry;
+        currentTimeHappy = timeHappy;
     }
 
     // Update is called once per frame
@@ -59,8 +76,22 @@ public class LevelManager : MonoBehaviour
                 Debug.Log("Adavancing panel");
             }
         }
+        // Barras de beat
         beatFiller1.fillAmount = currentBeatDuration / beatDuration;
         beatFiller2.fillAmount = currentBeatDuration / beatDuration;
+        // Animations
+        if (catfishAnimator.GetBool("Happy")) {
+            currentTimeHappy -= dt;
+            if (currentTimeHappy <= 0) {
+                catfishAnimator.SetBool("Happy", false);
+            }
+        }
+        if (catfishAnimator.GetBool("Angry")) {
+            currentTimeAngry -= dt;
+            if (currentTimeAngry <= 0) {
+                catfishAnimator.SetBool("Angry", false);
+            }
+        }
     }
 
     public void ExplodeBubble()
@@ -71,6 +102,10 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Good");
             StartCoroutine(ActivateAndDeactivate(goodIndicator));
+            catfishAnimator.SetBool("Happy", true);
+            catfishAnimator.SetBool("Angry", false);
+            currentTimeHappy = timeHappy;
+            // StartCoroutine(ActivateAndDeactivateAnimation("Happy"));
             currentPerformance++;
             currentPerformance = Mathf.Clamp(currentPerformance, -10, 10);
             performanceText.text = "Performance: " + currentPerformance;
@@ -81,6 +116,10 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Bad");
             StartCoroutine(ActivateAndDeactivate(badIndicator));
+            // StartCoroutine(ActivateAndDeactivateAnimation("Angry"));
+            catfishAnimator.SetBool("Angry", true);
+            catfishAnimator.SetBool("Happy", false);
+            currentTimeAngry = timeAngry;
             currentPerformance--;
             currentPerformance = Mathf.Clamp(currentPerformance, -10, 10);
             performanceText.text = "Performance: " + currentPerformance;
@@ -97,4 +136,10 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
     }
+
+    // IEnumerator ActivateAndDeactivateAnimation(string state) {
+    //     catfishAnimator.SetBool(state, true);
+    //     yield return new WaitForSeconds(statesDurations[state]);
+    //     catfishAnimator.SetBool(state, false);
+    // }
 }
