@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text performanceText;
     public TMP_Text fmodTimeText;
+    public TMP_Text scoreTextCool;
 
     public Image rythmIndicatorImageL;
     public Image rythmIndicatorImageR;
@@ -71,6 +72,8 @@ public class LevelManager : MonoBehaviour
     private int fmodPreviousTime = 0;
     private int fmodDeltaTime = 0;
     private bool gameOver = false;
+    private int linesRolled = 0;
+    private int tilesGenerated = 0;
 
     public static LevelManager Instance
     {
@@ -99,7 +102,8 @@ public class LevelManager : MonoBehaviour
 
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
 
-        GenerateTiles();
+        //GenerateTiles();
+        GenerateTile();
     }
 
     // Update is called once per frame
@@ -111,9 +115,15 @@ public class LevelManager : MonoBehaviour
         int fmodTime;
         musicEventEmitter.EventInstance.getTimelinePosition(out fmodTime);
         fmodTimeText.text = "FTime: " + currentMusicIntensity + " - " + fmodTime;
-        if (fmodPreviousTime > fmodTime)
+        int partDuration = 16000;   // Lo que dura cada segmento
+        //if (fmodPreviousTime < partDuration * currentMusicIntensity || 
+        //    fmodPreviousTime > partDuration * (currentMusicIntensity + 1))
+        //{            
+        //    fmodPreviousTime = partDuration * (currentMusicIntensity);
+        //}
+        if (fmodPreviousTime > fmodTime ||
+            fmodTime - fmodPreviousTime > partDuration)
         {
-            int partDuration = 16000;   // Lo que dura cada segmento
             fmodPreviousTime = partDuration * (currentMusicIntensity);
         }
         fmodDeltaTime = fmodTime - fmodPreviousTime;
@@ -146,6 +156,14 @@ public class LevelManager : MonoBehaviour
                 //musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
                 //fmodPreviousTime = 16000 * (currentMusicIntensity);
                 //Debug.Log("Current music inteisity: " + currentMusicIntensity);
+                linesRolled++;
+                if(linesRolled >= 6)
+                {
+                    Debug.Log(linesRolled + " lines rolled. Generating tile");
+                    GenerateTile();
+                    linesRolled = 0;
+                    //tilesGenerated++;
+                }
             }
         }
         // Barras de beat
@@ -207,6 +225,13 @@ public class LevelManager : MonoBehaviour
             RectTransform nextTile = Instantiate(tileObject, rollController.transform).GetComponent<RectTransform>();
             nextTile.anchoredPosition = Vector2.up * 600 * (i + 1);
         }
+    }
+
+    void GenerateTile()
+    {        
+        RectTransform nextTile = Instantiate(tileObject, rollController.transform).GetComponent<RectTransform>();
+        nextTile.anchoredPosition = Vector2.up * 600 * (tilesGenerated + 1);
+        tilesGenerated++;
     }
 
     void CheckPerformance()
@@ -300,7 +325,10 @@ public class LevelManager : MonoBehaviour
             currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
             performanceText.text = "Performance: " + currentPerformance;
             currentScore += 1 * (int)MathF.Pow(2, currentMusicIntensity); // TODO: Con multiplicadores
+            streakText.text = "x" + (int)MathF.Pow(2, currentMusicIntensity);
             scoreText.text = "Score: " + currentScore;
+            // TODO: Hacerlo bien
+            scoreTextCool.text = "00" + currentScore;
             // Bubble sounds
             bubbleEventEmitter.Play();
             bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
@@ -312,15 +340,15 @@ public class LevelManager : MonoBehaviour
                 jumper.Play();
             }
             // Streak
-            streak = Math.Log10(times);
-            if (streak != lastStreak) {
-                if (streak > 0) {
-                    streakText.text = "x" + streak.ToString();
-                }
-                streakText.GetComponent<JumperEffect>().Play();
-            }
-            lastStreak = streak;
-
+            //streak = Math.Log10(times);
+            //if (streak != lastStreak) {
+            //    if (streak > 0) {
+            //        streakText.text = "x" + streak;
+            //    }
+            //    streakText.GetComponent<JumperEffect>().Play();
+            //}
+            //lastStreak = streak;
+            
             //if (streak < 5) {
             //    streakImage.sprite = streakStates[0];
             //} else if (streak >= 5 && streak < 12) {
