@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
     public Image rythmIndicatorImageL;
     public Image rythmIndicatorImageR;
 
+    public Texture2D cursorTexture;
+
     int times;
     public TextMeshProUGUI streakText;
     double lastStreak;
@@ -95,6 +97,8 @@ public class LevelManager : MonoBehaviour
         bubbleEventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
         streakEventEmitter = GameObject.Find("Streak Effects").GetComponent<FMODUnity.StudioEventEmitter>();
 
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+
         GenerateTiles();
     }
 
@@ -109,7 +113,8 @@ public class LevelManager : MonoBehaviour
         fmodTimeText.text = "FTime: " + currentMusicIntensity + " - " + fmodTime;
         if (fmodPreviousTime > fmodTime)
         {
-            fmodPreviousTime = 8000 * (currentMusicIntensity);
+            int partDuration = 16000;   // Lo que dura cada segmento
+            fmodPreviousTime = partDuration * (currentMusicIntensity);
         }
         fmodDeltaTime = fmodTime - fmodPreviousTime;
         fmodPreviousTime = fmodTime;
@@ -294,7 +299,7 @@ public class LevelManager : MonoBehaviour
             currentPerformance++;
             currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
             performanceText.text = "Performance: " + currentPerformance;
-            currentScore += 1 + currentMusicIntensity;
+            currentScore += 1 * (int)MathF.Pow(2, currentMusicIntensity); // TODO: Con multiplicadores
             scoreText.text = "Score: " + currentScore;
             // Bubble sounds
             bubbleEventEmitter.Play();
@@ -315,15 +320,16 @@ public class LevelManager : MonoBehaviour
                 streakText.GetComponent<JumperEffect>().Play();
             }
             lastStreak = streak;
-            if (streak < 5) {
-                streakImage.sprite = streakStates[0];
-            } else if (streak >= 5 && streak < 12) {
-                streakImage.sprite = streakStates[1];
-            } else if (streak >= 12 && streak < 20) {
-                streakImage.sprite = streakStates[2];
-            } else if (streak >= 20) {
-                streakImage.sprite = streakStates[3];
-            }
+            //if (streak < 5) {
+            //    streakImage.sprite = streakStates[0];
+            //} else if (streak >= 5 && streak < 12) {
+            //    streakImage.sprite = streakStates[1];
+            //} else if (streak >= 12 && streak < 20) {
+            //    streakImage.sprite = streakStates[2];
+            //} else if (streak >= 20) {
+            //    streakImage.sprite = streakStates[3];
+            //}
+            streakImage.sprite = streakStates[currentMusicIntensity];
         }
         else
         {
