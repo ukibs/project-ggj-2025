@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &6408833030639206530
 Animator:
   serializedVersion: 7
@@ -456,6 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &1725020769516234505
 Animator:
   serializedVersion: 7
@@ -627,6 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &3145774968694128265
 Animator:
   serializedVersion: 7
@@ -798,6 +801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &3292336150479116397
 Animator:
   serializedVersion: 7
@@ -969,6 +973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &3869497817355492959
 Animator:
   serializedVersion: 7
@@ -1548,6 +1553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &7070900608592627553
 Animator:
   serializedVersion: 7
@@ -1719,6 +1725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &6408813183307351704
 Animator:
   serializedVersion: 7
@@ -1890,6 +1897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &6008938687072764690
 Animator:
   serializedVersion: 7
@@ -2238,6 +2246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &8120456227772767520
 Animator:
   serializedVersion: 7
@@ -2681,6 +2690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &2735749244690699732
 Animator:
   serializedVersion: 7
@@ -3124,6 +3134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &3347668796852361564
 Animator:
   serializedVersion: 7
@@ -3567,6 +3578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &702695443329966040
 Animator:
   serializedVersion: 7
@@ -3738,6 +3750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4696822580259988948
 Animator:
   serializedVersion: 7
@@ -4127,6 +4140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4512245001401087937
 Animator:
   serializedVersion: 7
@@ -4575,7 +4589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1913714051529941638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4936,6 +4950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &7518254995437767951
 Animator:
   serializedVersion: 7
@@ -5107,6 +5122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &7598023170319753482
 Animator:
   serializedVersion: 7
@@ -5319,6 +5335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &5123160419333250398
 Animator:
   serializedVersion: 7
@@ -5626,6 +5643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4381297194039095281
 Animator:
   serializedVersion: 7
@@ -6341,6 +6359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &3448920359489217900
 Animator:
   serializedVersion: 7
@@ -6512,6 +6531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &8893685436228750688
 Animator:
   serializedVersion: 7
@@ -6819,6 +6839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &7299445069506173240
 Animator:
   serializedVersion: 7
@@ -6990,6 +7011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &7815681381505693901
 Animator:
   serializedVersion: 7
@@ -7569,6 +7591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &2204597121385239746
 Animator:
   serializedVersion: 7
@@ -7740,6 +7763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &5073573023623972461
 Animator:
   serializedVersion: 7
@@ -7911,6 +7935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &6178735056734206453
 Animator:
   serializedVersion: 7
@@ -8082,6 +8107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &764659553133749332
 Animator:
   serializedVersion: 7
@@ -8294,6 +8320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &484081854562943166
 Animator:
   serializedVersion: 7
@@ -8601,6 +8628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &8975700901308019097
 Animator:
   serializedVersion: 7
@@ -8772,6 +8800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4781528122304251541
 Animator:
   serializedVersion: 7
@@ -9215,6 +9244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4690282702190592253
 Animator:
   serializedVersion: 7
@@ -9522,6 +9552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &1253675054555688716
 Animator:
   serializedVersion: 7
@@ -10006,6 +10037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &7756903634077040048
 Animator:
   serializedVersion: 7
@@ -10313,6 +10345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4387312520925662532
 Animator:
   serializedVersion: 7
@@ -10620,6 +10653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &5228135524812397948
 Animator:
   serializedVersion: 7
@@ -10791,6 +10825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4370728429439636191
 Animator:
   serializedVersion: 7
@@ -11370,6 +11405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+  exploded: 0
 --- !u!95 &4924203125670422510
 Animator:
   serializedVersion: 7

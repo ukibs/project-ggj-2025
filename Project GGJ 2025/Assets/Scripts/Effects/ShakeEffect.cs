@@ -15,17 +15,20 @@ public class ShakeEffect : MonoBehaviour
     public float timeSpeed = 0.1f;        // Duración del movimiento
     public float distance = 4;
     public float distanceMultiplier = 1;
+    float currentDistanceMultiplier;
     private float timeElapsed = 0f;    // Tiempo transcurrido
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         startPosition = transform.position;
-        endPosition = startPosition + Random.insideUnitSphere * distance;
+        startPosition.z = 0;
+        endPosition = startPosition + Random.insideUnitSphere * distance * distanceMultiplier;
         endPosition.z = 0;
         if (onStart || loop) {
             currentDuration = duration;
-        } 
+        }
+        currentDistanceMultiplier = distanceMultiplier;
         
     }
 
@@ -49,7 +52,7 @@ public class ShakeEffect : MonoBehaviour
             // Detener el movimiento cuando haya llegado al destino
             if (timeElapsed >= timeSpeed) {
                 timeElapsed = 0;
-                endPosition = startPosition + Random.insideUnitSphere * distance * distanceMultiplier;
+                endPosition = startPosition + Random.insideUnitSphere * distance * currentDistanceMultiplier;
                 endPosition.z = 0;
             }
             if (currentDuration > 0) {
@@ -57,13 +60,18 @@ public class ShakeEffect : MonoBehaviour
             } else if (loop) {
                 currentDuration = duration;
             } else {
-                distanceMultiplier = 1;
+                currentDistanceMultiplier = distanceMultiplier;
             }
         }
     }
 
     public void Play() {
         currentDuration = duration;
+    }
+
+    public void SetMultiplier(int distanceMultiplierReceived) {
+        distanceMultiplier = distanceMultiplierReceived;
+        currentDistanceMultiplier = distanceMultiplier;
     }
 
     public void IncreaseMultiplier() {

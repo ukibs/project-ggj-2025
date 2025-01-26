@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class LevelManager : MonoBehaviour
     public RectTransform rythmIndicatorR;
 
     public JumperEffect[] jumpers;
+
+    public ShakeEffect shakeEffect;
 
     public GameObject goodIndicator;
     public GameObject badIndicator;
@@ -105,13 +108,19 @@ public class LevelManager : MonoBehaviour
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
 
         //GenerateTiles();
+        tileObject.SetActive(false);
         GenerateTile();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameOver) return;
+        if (gameOver) {
+            if (!catfishAnimator) {
+                StartCoroutine(WaitAndGameOver());
+            }
+            return;
+        }
 
         float dt = Time.deltaTime;
         int fmodTime;
@@ -202,7 +211,7 @@ public class LevelManager : MonoBehaviour
                 }
             }
             // - Easter Egg
-            if (UnityEngine.Random.Range(0f, 1f) < 0.0001) {
+            if (UnityEngine.Random.Range(0f, 1f) < 0.001) {
                 catfishAnimator.SetBool("EasterEgg", true);
             }
             if (catfishAnimator.GetBool("EasterEgg")) {
@@ -237,6 +246,15 @@ public class LevelManager : MonoBehaviour
     void GenerateTile()
     {        
         RectTransform nextTile = Instantiate(tileObject, rollController.transform).GetComponent<RectTransform>();
+        foreach (Transform line in nextTile) {
+            foreach (Transform bubble in line) {
+                if (UnityEngine.Random.Range(1,501) < 50) {
+                    bubble.GetComponent<BubbleController>().exploded = true;
+                }
+            }
+        }
+        nextTile.gameObject.SetActive(true);
+
         nextTile.anchoredPosition = Vector2.up * 600 * (tilesGenerated + 1);
         tilesGenerated++;
     }
@@ -245,6 +263,7 @@ public class LevelManager : MonoBehaviour
     {
         //
         int currentStreakIntensity = Math.Min(currentPerformance / 5, maxMusicIntensity);
+        shakeEffect.SetMultiplier(currentStreakIntensity);
         currentStreakIntensity = (int)MathF.Max(0, currentStreakIntensity);
         if(currentStreakIntensity != currentMusicIntensity)
         {
@@ -310,8 +329,8 @@ public class LevelManager : MonoBehaviour
         musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", 6);
         catfishAnimator.SetBool("Death", true);
         bubbleAnimator.SetBool("Destroy", true);
+        catfishAnimator.AddComponent<PhyisicsEffect>();
         PlayerPrefs.SetInt("NewScore", currentScore);
-        StartCoroutine(WaitAndGameOver());
     }
 
     IEnumerator WaitAndGameOver()
@@ -410,6 +429,7 @@ public class LevelManager : MonoBehaviour
         streak = 0;
         streakText.text = "";
         streakImage.sprite = streakStates[0];
+        shakeEffect.distanceMultiplier = 0;
 
         //Debug.Log("Bad");
         StartCoroutine(ActivateAndDeactivate(badIndicator));

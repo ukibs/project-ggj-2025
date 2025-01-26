@@ -25,7 +25,10 @@ public class BubbleMovement : MonoBehaviour
         if (bubbleSprite) {
             bubbleRectTransform = bubbleSprite.GetComponent<RectTransform>();
         } else {
-            bubbleRectTransform = GetComponent<RectTransform>();
+            bubbleSprite = GetComponentInChildren<Image>();
+            if (bubbleSprite) {
+                bubbleRectTransform = bubbleSprite.GetComponent<RectTransform>();
+            }
         }
         // PIVOTE EN EL CENTRO!!!!!!!!!!
         bounds = new Vector3(bubbleRectTransform.rect.width/2, bubbleRectTransform.rect.height/2, 0);

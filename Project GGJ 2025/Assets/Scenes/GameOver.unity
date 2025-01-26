@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 903165902}
   - component: {fileID: 903165901}
   - component: {fileID: 903165900}
+  - component: {fileID: 903165903}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -915,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -395, y: -225}
+  m_AnchoredPosition: {x: -400, y: -160}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903165900
@@ -1012,6 +1013,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903165898}
   m_CullTransparentMesh: 1
+--- !u!114 &903165903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903165898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce580764259de8f4f9cc584a692b6178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 0}
+  rotation: 0
+  speed: 10
+  rotationSpeed: 4
 --- !u!1 &933561268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1252,7 @@ GameObject:
   - component: {fileID: 1031657549}
   - component: {fileID: 1031657548}
   - component: {fileID: 1031657547}
+  - component: {fileID: 1031657550}
   m_Layer: 5
   m_Name: Try Again Button
   m_TagString: Untagged
@@ -1259,7 +1277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 426, y: -225}
+  m_AnchoredPosition: {x: 421, y: -160}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031657547
@@ -1356,6 +1374,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031657545}
   m_CullTransparentMesh: 1
+--- !u!114 &1031657550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031657545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce580764259de8f4f9cc584a692b6178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 0}
+  rotation: 0
+  speed: 10
+  rotationSpeed: 4
 --- !u!1 &1140910838
 GameObject:
   m_ObjectHideFlags: 0

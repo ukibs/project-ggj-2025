@@ -7,7 +7,7 @@ public class BubbleController : MonoBehaviour
     public Texture2D explodedBubbleTexture;
     public Sprite explodedBubbleSprite;
 
-    private bool exploded = false;
+    public bool exploded = false;
     private Image buttonImage;
     private FMODUnity.StudioEventEmitter eventEmitter;
 
@@ -17,6 +17,9 @@ public class BubbleController : MonoBehaviour
         bubbleAnimator = GetComponent<Animator>();
         buttonImage = GetComponent<Image>();
         eventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
+        if (exploded) {
+            bubbleAnimator.SetBool("Explosion", true);
+        }
     }
 
     // Update is called once per frame
