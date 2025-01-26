@@ -14,7 +14,7 @@ public class TileController : MonoBehaviour
     {
         //if(rectTransform.anchoredPosition.y < -600)
         //Debug.Log("Tile y position: " + transform.position.y);
-        if (transform.position.y < -100)
+        if (transform.position.y < -150)
         {
             Destroy(gameObject);
         }
