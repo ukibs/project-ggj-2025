@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class BubbleController : MonoBehaviour
 {
+    Animator bubbleAnimator;
     public Texture2D explodedBubbleTexture;
     public Sprite explodedBubbleSprite;
 
@@ -13,6 +14,7 @@ public class BubbleController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        bubbleAnimator = GetComponent<Animator>();
         buttonImage = GetComponent<Image>();
         eventEmitter = GameObject.Find("Bubble Effects").GetComponent<FMODUnity.StudioEventEmitter>();
     }
@@ -20,7 +22,7 @@ public class BubbleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void CheckAndExplode()
@@ -29,7 +31,9 @@ public class BubbleController : MonoBehaviour
         {
             exploded = true;
             buttonImage.sprite = explodedBubbleSprite;
+
             LevelManager.Instance.ExplodeBubble();
+            bubbleAnimator.SetBool("Explosion", true);
             //eventEmitter.Play();
             //eventEmitter.EventInstance.setParameterByName("Burbuja", 1);
         }

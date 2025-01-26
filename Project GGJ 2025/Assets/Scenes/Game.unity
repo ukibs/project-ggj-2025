@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 19045254}
   - component: {fileID: 19045253}
   - component: {fileID: 19045252}
+  - component: {fileID: 19045256}
   m_Layer: 5
   m_Name: Bubble (2)
   m_TagString: Untagged
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &19045253
 MonoBehaviour:
@@ -267,6 +268,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19045250}
   m_CullTransparentMesh: 1
+--- !u!95 &19045256
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19045250}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &34896541
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &85382016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -671,6 +694,7 @@ GameObject:
   - component: {fileID: 89759110}
   - component: {fileID: 89759109}
   - component: {fileID: 89759108}
+  - component: {fileID: 89759112}
   m_Layer: 5
   m_Name: Bubble (5)
   m_TagString: Untagged
@@ -710,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &89759109
 MonoBehaviour:
@@ -806,6 +830,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89759106}
   m_CullTransparentMesh: 1
+--- !u!95 &89759112
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89759106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &172671594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1234,7 @@ GameObject:
   - component: {fileID: 220412400}
   - component: {fileID: 220412399}
   - component: {fileID: 220412398}
+  - component: {fileID: 220412402}
   m_Layer: 5
   m_Name: Bubble (4)
   m_TagString: Untagged
@@ -1227,7 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &220412399
 MonoBehaviour:
@@ -1323,6 +1370,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220412396}
   m_CullTransparentMesh: 1
+--- !u!95 &220412402
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220412396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &227003699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1541,7 @@ GameObject:
   - component: {fileID: 257500464}
   - component: {fileID: 257500463}
   - component: {fileID: 257500462}
+  - component: {fileID: 257500466}
   m_Layer: 5
   m_Name: Bubble (5)
   m_TagString: Untagged
@@ -1511,7 +1581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &257500463
 MonoBehaviour:
@@ -1607,6 +1677,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257500460}
   m_CullTransparentMesh: 1
+--- !u!95 &257500466
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257500460}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &277422881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1712,7 @@ GameObject:
   - component: {fileID: 277422885}
   - component: {fileID: 277422884}
   - component: {fileID: 277422883}
+  - component: {fileID: 277422887}
   m_Layer: 5
   m_Name: Bubble (4)
   m_TagString: Untagged
@@ -1659,7 +1752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &277422884
 MonoBehaviour:
@@ -1755,6 +1848,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277422881}
   m_CullTransparentMesh: 1
+--- !u!95 &277422887
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277422881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &284235277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2231,6 +2346,7 @@ GameObject:
   - component: {fileID: 385546469}
   - component: {fileID: 385546468}
   - component: {fileID: 385546471}
+  - component: {fileID: 385546472}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -2364,8 +2480,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
+--- !u!95 &385546472
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385546466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &386056369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,6 +2517,7 @@ GameObject:
   - component: {fileID: 386056373}
   - component: {fileID: 386056372}
   - component: {fileID: 386056371}
+  - component: {fileID: 386056375}
   m_Layer: 5
   m_Name: Bubble (2)
   m_TagString: Untagged
@@ -2418,7 +2557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &386056372
 MonoBehaviour:
@@ -2514,6 +2653,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386056369}
   m_CullTransparentMesh: 1
+--- !u!95 &386056375
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386056369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &387282222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2876,7 @@ GameObject:
   - component: {fileID: 427812948}
   - component: {fileID: 427812947}
   - component: {fileID: 427812946}
+  - component: {fileID: 427812950}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -2754,7 +2916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &427812947
 MonoBehaviour:
@@ -2850,6 +3012,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427812944}
   m_CullTransparentMesh: 1
+--- !u!95 &427812950
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427812944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &438767509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3246,7 @@ GameObject:
   - component: {fileID: 545718735}
   - component: {fileID: 545718734}
   - component: {fileID: 545718733}
+  - component: {fileID: 545718737}
   m_Layer: 5
   m_Name: Bubble (1)
   m_TagString: Untagged
@@ -3101,7 +3286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &545718734
 MonoBehaviour:
@@ -3197,6 +3382,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545718731}
   m_CullTransparentMesh: 1
+--- !u!95 &545718737
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545718731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &599342115
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,6 +3475,7 @@ GameObject:
   - component: {fileID: 630711188}
   - component: {fileID: 630711187}
   - component: {fileID: 630711186}
+  - component: {fileID: 630711190}
   m_Layer: 5
   m_Name: Bubble (3)
   m_TagString: Untagged
@@ -3307,7 +3515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &630711187
 MonoBehaviour:
@@ -3403,6 +3611,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630711184}
   m_CullTransparentMesh: 1
+--- !u!95 &630711190
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630711184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &644816159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,6 +3725,7 @@ GameObject:
   - component: {fileID: 662175873}
   - component: {fileID: 662175872}
   - component: {fileID: 662175871}
+  - component: {fileID: 662175875}
   m_Layer: 5
   m_Name: Bubble (4)
   m_TagString: Untagged
@@ -3534,7 +3765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &662175872
 MonoBehaviour:
@@ -3630,6 +3861,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662175869}
   m_CullTransparentMesh: 1
+--- !u!95 &662175875
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662175869}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &678212571
 GameObject:
   m_ObjectHideFlags: 0
@@ -4468,6 +4721,7 @@ GameObject:
   - component: {fileID: 771208677}
   - component: {fileID: 771208676}
   - component: {fileID: 771208675}
+  - component: {fileID: 771208679}
   m_Layer: 5
   m_Name: Bubble (5)
   m_TagString: Untagged
@@ -4507,7 +4761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &771208676
 MonoBehaviour:
@@ -4603,6 +4857,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771208673}
   m_CullTransparentMesh: 1
+--- !u!95 &771208679
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771208673}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &803601728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,7 +4891,7 @@ GameObject:
   - component: {fileID: 803601731}
   - component: {fileID: 803601730}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5249,6 +5525,7 @@ GameObject:
   - component: {fileID: 860745021}
   - component: {fileID: 860745020}
   - component: {fileID: 860745019}
+  - component: {fileID: 860745023}
   m_Layer: 5
   m_Name: Bubble (5)
   m_TagString: Untagged
@@ -5288,7 +5565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &860745020
 MonoBehaviour:
@@ -5384,6 +5661,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860745017}
   m_CullTransparentMesh: 1
+--- !u!95 &860745023
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860745017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &904694638
 GameObject:
   m_ObjectHideFlags: 0
@@ -6016,6 +6315,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971592336}
   m_CullTransparentMesh: 1
+--- !u!1 &971912875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 971912876}
+  - component: {fileID: 971912878}
+  - component: {fileID: 971912877}
+  m_Layer: 5
+  m_Name: Image (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &971912876
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971912875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116064973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -396, y: 40}
+  m_SizeDelta: {x: 389.8501, y: 389.8501}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &971912877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971912875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 99c2eddb7983ce34da45f564172086c6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &971912878
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971912875}
+  m_CullTransparentMesh: 1
 --- !u!1 &983316010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,6 +6484,7 @@ GameObject:
   - component: {fileID: 1014956454}
   - component: {fileID: 1014956453}
   - component: {fileID: 1014956452}
+  - component: {fileID: 1014956456}
   m_Layer: 5
   m_Name: Bubble (2)
   m_TagString: Untagged
@@ -6149,7 +6524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1014956453
 MonoBehaviour:
@@ -6245,6 +6620,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014956450}
   m_CullTransparentMesh: 1
+--- !u!95 &1014956456
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014956450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1017784920
 GameObject:
   m_ObjectHideFlags: 0
@@ -6258,6 +6655,7 @@ GameObject:
   - component: {fileID: 1017784924}
   - component: {fileID: 1017784923}
   - component: {fileID: 1017784922}
+  - component: {fileID: 1017784926}
   m_Layer: 5
   m_Name: Bubble (3)
   m_TagString: Untagged
@@ -6297,7 +6695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1017784923
 MonoBehaviour:
@@ -6393,6 +6791,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017784920}
   m_CullTransparentMesh: 1
+--- !u!95 &1017784926
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017784920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1023650387
 GameObject:
   m_ObjectHideFlags: 0
@@ -6447,6 +6867,7 @@ GameObject:
   - component: {fileID: 1032311779}
   - component: {fileID: 1032311778}
   - component: {fileID: 1032311777}
+  - component: {fileID: 1032311781}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -6486,7 +6907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1032311778
 MonoBehaviour:
@@ -6582,6 +7003,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032311775}
   m_CullTransparentMesh: 1
+--- !u!95 &1032311781
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032311775}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1060914542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,6 +7196,7 @@ RectTransform:
   - {fileID: 1659472451}
   - {fileID: 2134434087}
   - {fileID: 172671595}
+  - {fileID: 2116064973}
   m_Father: {fileID: 2023552023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7369,6 +7813,7 @@ GameObject:
   - component: {fileID: 1211191080}
   - component: {fileID: 1211191079}
   - component: {fileID: 1211191078}
+  - component: {fileID: 1211191082}
   m_Layer: 5
   m_Name: Bubble (1)
   m_TagString: Untagged
@@ -7408,7 +7853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1211191079
 MonoBehaviour:
@@ -7504,6 +7949,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211191076}
   m_CullTransparentMesh: 1
+--- !u!95 &1211191082
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211191076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1224577583
 GameObject:
   m_ObjectHideFlags: 0
@@ -7517,6 +7984,7 @@ GameObject:
   - component: {fileID: 1224577587}
   - component: {fileID: 1224577586}
   - component: {fileID: 1224577585}
+  - component: {fileID: 1224577589}
   m_Layer: 5
   m_Name: Bubble (3)
   m_TagString: Untagged
@@ -7556,7 +8024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1224577586
 MonoBehaviour:
@@ -7652,6 +8120,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224577583}
   m_CullTransparentMesh: 1
+--- !u!95 &1224577589
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224577583}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1240666030
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,6 +8155,7 @@ GameObject:
   - component: {fileID: 1240666034}
   - component: {fileID: 1240666033}
   - component: {fileID: 1240666032}
+  - component: {fileID: 1240666036}
   m_Layer: 5
   m_Name: Bubble (4)
   m_TagString: Untagged
@@ -7704,7 +8195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1240666033
 MonoBehaviour:
@@ -7800,6 +8291,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240666030}
   m_CullTransparentMesh: 1
+--- !u!95 &1240666036
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240666030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1245575518
 GameObject:
   m_ObjectHideFlags: 0
@@ -8024,6 +8537,7 @@ GameObject:
   - component: {fileID: 1271624713}
   - component: {fileID: 1271624712}
   - component: {fileID: 1271624711}
+  - component: {fileID: 1271624715}
   m_Layer: 5
   m_Name: Bubble (3)
   m_TagString: Untagged
@@ -8063,7 +8577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1271624712
 MonoBehaviour:
@@ -8159,6 +8673,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271624709}
   m_CullTransparentMesh: 1
+--- !u!95 &1271624715
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271624709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1319859685
 GameObject:
   m_ObjectHideFlags: 0
@@ -8172,6 +8708,7 @@ GameObject:
   - component: {fileID: 1319859689}
   - component: {fileID: 1319859688}
   - component: {fileID: 1319859687}
+  - component: {fileID: 1319859691}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -8211,7 +8748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1319859688
 MonoBehaviour:
@@ -8307,6 +8844,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319859685}
   m_CullTransparentMesh: 1
+--- !u!95 &1319859691
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319859685}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1328358393
 GameObject:
   m_ObjectHideFlags: 0
@@ -8456,6 +9015,7 @@ GameObject:
   - component: {fileID: 1356529373}
   - component: {fileID: 1356529372}
   - component: {fileID: 1356529371}
+  - component: {fileID: 1356529375}
   m_Layer: 5
   m_Name: Bubble (2)
   m_TagString: Untagged
@@ -8495,7 +9055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1356529372
 MonoBehaviour:
@@ -8591,6 +9151,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356529369}
   m_CullTransparentMesh: 1
+--- !u!95 &1356529375
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356529369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1364620692
 GameObject:
   m_ObjectHideFlags: 0
@@ -8890,6 +9472,7 @@ GameObject:
   - component: {fileID: 1450473856}
   - component: {fileID: 1450473855}
   - component: {fileID: 1450473854}
+  - component: {fileID: 1450473858}
   m_Layer: 5
   m_Name: Bubble (1)
   m_TagString: Untagged
@@ -8929,7 +9512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1450473855
 MonoBehaviour:
@@ -9025,6 +9608,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450473852}
   m_CullTransparentMesh: 1
+--- !u!95 &1450473858
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450473852}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1495729924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1495729926}
+  - component: {fileID: 1495729925}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1495729925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495729924}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a0c517ee49019a24f97ab235ad477a65, type: 2}
+--- !u!4 &1495729926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495729924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.982615, y: -6.5452023, z: -0.3619242}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1526340709
 GameObject:
   m_ObjectHideFlags: 0
@@ -9103,6 +9757,7 @@ GameObject:
   - component: {fileID: 1541383661}
   - component: {fileID: 1541383660}
   - component: {fileID: 1541383659}
+  - component: {fileID: 1541383663}
   m_Layer: 5
   m_Name: Bubble (5)
   m_TagString: Untagged
@@ -9142,7 +9797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1541383660
 MonoBehaviour:
@@ -9238,6 +9893,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541383657}
   m_CullTransparentMesh: 1
+--- !u!95 &1541383663
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541383657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1552027585
 GameObject:
   m_ObjectHideFlags: 0
@@ -9523,6 +10200,7 @@ GameObject:
   - component: {fileID: 1589990832}
   - component: {fileID: 1589990831}
   - component: {fileID: 1589990830}
+  - component: {fileID: 1589990834}
   m_Layer: 5
   m_Name: Bubble (2)
   m_TagString: Untagged
@@ -9562,7 +10240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1589990831
 MonoBehaviour:
@@ -9658,6 +10336,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589990828}
   m_CullTransparentMesh: 1
+--- !u!95 &1589990834
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589990828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1611849265
 GameObject:
   m_ObjectHideFlags: 0
@@ -9671,6 +10371,7 @@ GameObject:
   - component: {fileID: 1611849269}
   - component: {fileID: 1611849268}
   - component: {fileID: 1611849267}
+  - component: {fileID: 1611849271}
   m_Layer: 5
   m_Name: Bubble (1)
   m_TagString: Untagged
@@ -9710,7 +10411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1611849268
 MonoBehaviour:
@@ -9806,6 +10507,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611849265}
   m_CullTransparentMesh: 1
+--- !u!95 &1611849271
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611849265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1612775079
 GameObject:
   m_ObjectHideFlags: 0
@@ -9819,6 +10542,7 @@ GameObject:
   - component: {fileID: 1612775083}
   - component: {fileID: 1612775082}
   - component: {fileID: 1612775081}
+  - component: {fileID: 1612775085}
   m_Layer: 5
   m_Name: Bubble (2)
   m_TagString: Untagged
@@ -9858,7 +10582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1612775082
 MonoBehaviour:
@@ -9954,6 +10678,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612775079}
   m_CullTransparentMesh: 1
+--- !u!95 &1612775085
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612775079}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1652094707
 GameObject:
   m_ObjectHideFlags: 0
@@ -10367,6 +11113,7 @@ GameObject:
   - component: {fileID: 1684801852}
   - component: {fileID: 1684801851}
   - component: {fileID: 1684801850}
+  - component: {fileID: 1684801854}
   m_Layer: 5
   m_Name: Bubble (1)
   m_TagString: Untagged
@@ -10406,7 +11153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1684801851
 MonoBehaviour:
@@ -10502,6 +11249,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684801848}
   m_CullTransparentMesh: 1
+--- !u!95 &1684801854
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684801848}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1701570473
 GameObject:
   m_ObjectHideFlags: 0
@@ -10651,6 +11420,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766136990}
+  m_CullTransparentMesh: 1
+--- !u!1 &1766678283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766678284}
+  - component: {fileID: 1766678286}
+  - component: {fileID: 1766678285}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1766678284
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766678283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116064973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -396, y: 40}
+  m_SizeDelta: {x: 389.8501, y: 389.8501}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1766678285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766678283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0b04ad7f1346cc14ca1358e0d3003ab0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1766678286
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766678283}
   m_CullTransparentMesh: 1
 --- !u!1 &1770152447
 GameObject:
@@ -11337,7 +12181,7 @@ Camera:
   m_GameObject: {fileID: 1837781698}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -11431,7 +12275,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -11465,6 +12309,7 @@ GameObject:
   - component: {fileID: 1838307637}
   - component: {fileID: 1838307636}
   - component: {fileID: 1838307635}
+  - component: {fileID: 1838307639}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -11504,7 +12349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1838307636
 MonoBehaviour:
@@ -11600,6 +12445,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838307633}
   m_CullTransparentMesh: 1
+--- !u!95 &1838307639
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838307633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1843636341
 GameObject:
   m_ObjectHideFlags: 0
@@ -11890,7 +12757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1918117806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11978,6 +12845,7 @@ GameObject:
   - component: {fileID: 1935791582}
   - component: {fileID: 1935791581}
   - component: {fileID: 1935791580}
+  - component: {fileID: 1935791584}
   m_Layer: 5
   m_Name: Bubble (4)
   m_TagString: Untagged
@@ -12017,7 +12885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1935791581
 MonoBehaviour:
@@ -12113,6 +12981,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935791578}
   m_CullTransparentMesh: 1
+--- !u!95 &1935791584
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935791578}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1941317791
 GameObject:
   m_ObjectHideFlags: 0
@@ -12126,6 +13016,7 @@ GameObject:
   - component: {fileID: 1941317795}
   - component: {fileID: 1941317794}
   - component: {fileID: 1941317793}
+  - component: {fileID: 1941317797}
   m_Layer: 5
   m_Name: Bubble (3)
   m_TagString: Untagged
@@ -12165,7 +13056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &1941317794
 MonoBehaviour:
@@ -12261,6 +13152,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941317791}
   m_CullTransparentMesh: 1
+--- !u!95 &1941317797
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941317791}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1947676899
 GameObject:
   m_ObjectHideFlags: 0
@@ -12482,6 +13395,7 @@ GameObject:
   - component: {fileID: 2015530407}
   - component: {fileID: 2015530406}
   - component: {fileID: 2015530405}
+  - component: {fileID: 2015530409}
   m_Layer: 5
   m_Name: Bubble (1)
   m_TagString: Untagged
@@ -12521,7 +13435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &2015530406
 MonoBehaviour:
@@ -12617,6 +13531,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015530403}
   m_CullTransparentMesh: 1
+--- !u!95 &2015530409
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015530403}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2023552019
 GameObject:
   m_ObjectHideFlags: 0
@@ -12687,7 +13623,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1837781700}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -12751,6 +13687,7 @@ GameObject:
   - component: {fileID: 2034263459}
   - component: {fileID: 2034263458}
   - component: {fileID: 2034263457}
+  - component: {fileID: 2034263461}
   m_Layer: 5
   m_Name: Bubble (4)
   m_TagString: Untagged
@@ -12790,7 +13727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &2034263458
 MonoBehaviour:
@@ -12885,6 +13822,103 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034263455}
+  m_CullTransparentMesh: 1
+--- !u!95 &2034263461
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034263455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2050165704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2050165705}
+  - component: {fileID: 2050165707}
+  - component: {fileID: 2050165706}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2050165705
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050165704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116064973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -396, y: 40}
+  m_SizeDelta: {x: 389.8501, y: 389.8501}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2050165706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050165704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: bebf2b6395f9c2d44bbfaedcbdd19d29, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2050165707
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050165704}
   m_CullTransparentMesh: 1
 --- !u!1 &2055018441
 GameObject:
@@ -13035,6 +14069,7 @@ GameObject:
   - component: {fileID: 2056479301}
   - component: {fileID: 2056479300}
   - component: {fileID: 2056479299}
+  - component: {fileID: 2056479303}
   m_Layer: 5
   m_Name: Bubble (3)
   m_TagString: Untagged
@@ -13074,7 +14109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &2056479300
 MonoBehaviour:
@@ -13170,6 +14205,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056479297}
   m_CullTransparentMesh: 1
+--- !u!95 &2056479303
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056479297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2057048162
 GameObject:
   m_ObjectHideFlags: 0
@@ -13319,6 +14376,7 @@ GameObject:
   - component: {fileID: 2065090468}
   - component: {fileID: 2065090467}
   - component: {fileID: 2065090466}
+  - component: {fileID: 2065090470}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -13358,7 +14416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &2065090467
 MonoBehaviour:
@@ -13454,6 +14512,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065090464}
   m_CullTransparentMesh: 1
+--- !u!95 &2065090470
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065090464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2068706855
 GameObject:
   m_ObjectHideFlags: 0
@@ -13741,6 +14821,7 @@ GameObject:
   - component: {fileID: 2089719017}
   - component: {fileID: 2089719016}
   - component: {fileID: 2089719015}
+  - component: {fileID: 2089719019}
   m_Layer: 5
   m_Name: Bubble (5)
   m_TagString: Untagged
@@ -13780,7 +14861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff0fb979cc21e46a1ea626deb998f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedBubbleTexture: {fileID: 0}
+  explodedBubbleTexture: {fileID: 2800000, guid: 66e42c65a66a0e1448829a2fc71ecfd7, type: 3}
   explodedBubbleSprite: {fileID: 21300000, guid: 0b1ba36694896d04bb8691133dd0ff71, type: 3}
 --- !u!114 &2089719016
 MonoBehaviour:
@@ -13876,6 +14957,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089719013}
   m_CullTransparentMesh: 1
+--- !u!95 &2089719019
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089719013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 835599f2e54c3ef468197b1702ffc611, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2092815064
 GameObject:
   m_ObjectHideFlags: 0
@@ -14051,6 +15154,44 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 400}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2116064972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2116064973}
+  m_Layer: 5
+  m_Name: Streak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2116064973
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116064972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1766678284}
+  - {fileID: 2050165705}
+  - {fileID: 971912876}
+  m_Father: {fileID: 1115404894}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2121431879
@@ -14374,3 +15515,4 @@ SceneRoots:
   - {fileID: 1526340711}
   - {fileID: 686851747}
   - {fileID: 2078096840}
+  - {fileID: 1495729926}
