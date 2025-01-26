@@ -73,7 +73,7 @@ public class BouncyEffect : MonoBehaviour
                     if (!done[i]) {
                         Transform child = transform.GetChild(i);
                         if (delay[i] > 0) {
-                            if (i == 0 || delay[i-1] <= 0) {
+                            if (i == transform.childCount-1 || delay[i+1] <= 0) {
                                 delay[i] -= Time.deltaTime;
                             }
                         } else if (!comingBack[i]) {
