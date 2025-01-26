@@ -32,8 +32,12 @@ public class BubbleController : MonoBehaviour
             exploded = true;
             buttonImage.sprite = explodedBubbleSprite;
 
-            LevelManager.Instance.ExplodeBubble();
-            bubbleAnimator.SetBool("Explosion", true);
+            bool correct = LevelManager.Instance.ExplodeBubble();
+            if (!correct) {
+                bubbleAnimator.SetBool("Cursed", true);
+            } else {
+                bubbleAnimator.SetBool("Explosion", true);
+            }
             //eventEmitter.Play();
             //eventEmitter.EventInstance.setParameterByName("Burbuja", 1);
         }

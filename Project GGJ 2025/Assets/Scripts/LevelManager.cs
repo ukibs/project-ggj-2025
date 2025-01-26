@@ -177,7 +177,7 @@ public class LevelManager : MonoBehaviour
                 }
             }
             // - Easter Egg
-            if (UnityEngine.Random.Range(0f, 1f) < 0.00001) {
+            if (UnityEngine.Random.Range(0f, 1f) < 0.0001) {
                 catfishAnimator.SetBool("EasterEgg", true);
             }
             if (catfishAnimator.GetBool("EasterEgg")) {
@@ -268,9 +268,9 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void ExplodeBubble()
+    public bool ExplodeBubble()
     {
-        if (gameOver) return;
+        if (gameOver) return false;
         //Debug.Log("Bubble exploded");
         // Reset wait time
         currentTimeWait = timeWait;
@@ -324,10 +324,13 @@ public class LevelManager : MonoBehaviour
             } else if (streak >= 20) {
                 streakImage.sprite = streakStates[3];
             }
+            return true;
         }
         else
         {
+
             BadPulsation();
+            return false;
         }
     }
 
