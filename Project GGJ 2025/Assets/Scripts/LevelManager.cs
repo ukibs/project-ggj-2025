@@ -268,14 +268,18 @@ public class LevelManager : MonoBehaviour
         if(currentStreakIntensity != currentMusicIntensity)
         {
             Debug.Log("Current performance: " + currentPerformance + " - Current streak intensity: " + currentStreakIntensity + " - Current music intensity: " + currentMusicIntensity);
+            if (currentStreakIntensity > currentMusicIntensity)
+            {
+                // Streak sounds
+                streakEventEmitter.Play();
+            }
+
             currentMusicIntensity = currentStreakIntensity;
             musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
             currentHitMargin = goodHitMargin - (0.1f * currentMusicIntensity);
             beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
             beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
             //currentBeats = 0;
-            // Streak sounds
-            streakEventEmitter.Play();
             //streakEventEmitter.EventInstance.setParameterByName("Burbuja", 1);
         }
 
