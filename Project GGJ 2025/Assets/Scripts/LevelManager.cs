@@ -278,7 +278,7 @@ public class LevelManager : MonoBehaviour
         //    currentMusicIntensity = 2;
         //    musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", currentMusicIntensity);
         //    currentHitMargin = goodHitMargin - 0.2f;
-        //    beatMarginIndicatorL.anchoredPosition = new Vector2(-(currentHitMargin * 150), 0);
+        //    beatMarginIndicatorL.anchoredPosition = new Vecursoerctor2(-(currentHitMargin * 150), 0);
         //    beatMarginIndicatorR.anchoredPosition = new Vector2((currentHitMargin * 150), 0);
         //    currentBeats = 0;
         //    // Streak sounds
