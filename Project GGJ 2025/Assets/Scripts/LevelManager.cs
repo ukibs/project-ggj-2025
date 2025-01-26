@@ -136,8 +136,8 @@ public class LevelManager : MonoBehaviour
         currentBeatDuration += fmodDeltaTime;
         if (currentBeatDuration >= beatDuration)
         {
-            //currentBeatDuration -= beatDuration;
-            currentBeatDuration = 0;
+            currentBeatDuration -= beatDuration;
+            // currentBeatDuration = 0;
             //
             rythmIndicatorImageL.color = new Color(1, 1, 1);
             rythmIndicatorImageR.color = new Color(1, 1, 1);
@@ -304,7 +304,7 @@ public class LevelManager : MonoBehaviour
     void GameOver()
     {
         // You lose
-        musicEventEmitter.Stop();
+        // musicEventEmitter.Stop();
         // Pez muerto
         gameOver = true;
         musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", 6);
@@ -316,7 +316,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator WaitAndGameOver()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("GameOver");
     }
 
@@ -332,7 +332,8 @@ public class LevelManager : MonoBehaviour
         // 
         hasClicked = true;
         float fillAmount = (float)currentBeatDuration / (float)beatDuration;
-        if(fillAmount <= currentHitMargin)
+        if(fillAmount <= currentHitMargin || 
+            fillAmount > 0.90f) // Tolereancia extra
         {
             times += 1;
             //Debug.Log("Good");
