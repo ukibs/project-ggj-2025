@@ -244,7 +244,7 @@ public class LevelManager : MonoBehaviour
     void CheckPerformance()
     {
         //
-        int currentStreakIntensity = currentPerformance / 5;
+        int currentStreakIntensity = Math.Min(currentPerformance / 5, maxMusicIntensity);
         currentStreakIntensity = (int)MathF.Max(0, currentStreakIntensity);
         if(currentStreakIntensity != currentMusicIntensity)
         {
@@ -345,7 +345,7 @@ public class LevelManager : MonoBehaviour
             currentTimeHappy = timeHappy;
             // StartCoroutine(ActivateAndDeactivateAnimation("Happy"));
             currentPerformance++;
-            currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
+            // currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
             performanceText.text = "Performance: " + currentPerformance;
             currentScore += 1 * (int)MathF.Pow(2, currentMusicIntensity); // TODO: Con multiplicadores
             streakText.text = "x" + (int)MathF.Pow(2, currentMusicIntensity);
@@ -413,7 +413,10 @@ public class LevelManager : MonoBehaviour
             catfishAnimator.SetBool("Happy", false);
         }
         currentTimeAngry = timeAngry;
-        currentPerformance--;
+        if (currentPerformance > 5)
+            currentPerformance -= 5;
+        else
+            currentPerformance--;
         currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
         performanceText.text = "Performance: " + currentPerformance;
         // Bubble sounds
