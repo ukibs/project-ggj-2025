@@ -12,6 +12,7 @@ public class PlayButtonController : MonoBehaviour
     public bool menu = false;
     bool pressed;
     public bool changeScene;
+    public CounterController counterController;
     Animator animator;
     BubbleMovement bubbleMovement;
     public InstructionsController instructionsController;
@@ -75,6 +76,9 @@ public class PlayButtonController : MonoBehaviour
     public void Play() {
         pressed = true;
         animator.SetBool("Destroy", true);
+        if (counterController) {
+            counterController.Add();
+        }
         foreach (Transform child in transform) {
             if (!changeScene) {
                 child.SetParent(transform.parent);
