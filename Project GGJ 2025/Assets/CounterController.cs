@@ -20,6 +20,7 @@ public class CounterController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.position = new Vector3(transform.position.x, Screen.height + GetComponent<RectTransform>().rect.height/2, transform.position.z);
         startPosition = transform.position;
         endPosition = transform.position + new Vector3(0, -GetComponent<RectTransform>().rect.height, 0);
         currentHideTime = hideTime;
