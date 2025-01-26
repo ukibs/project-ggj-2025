@@ -22,7 +22,11 @@ public class BubbleMovement : MonoBehaviour
         rotation = UnityEngine.Random.Range(1, 101) < 50 ? -1 : 1;
         // 
         bubbleSprite = GetComponent<Image>();
-        bubbleRectTransform = bubbleSprite.GetComponent<RectTransform>();
+        if (bubbleSprite) {
+            bubbleRectTransform = bubbleSprite.GetComponent<RectTransform>();
+        } else {
+            bubbleRectTransform = GetComponent<RectTransform>();
+        }
         // PIVOTE EN EL CENTRO!!!!!!!!!!
         bounds = new Vector3(bubbleRectTransform.rect.width/2, bubbleRectTransform.rect.height/2, 0);
         bounds.z = (float)Math.Sqrt(bounds.x * bounds.x + bounds.y * bounds.y);

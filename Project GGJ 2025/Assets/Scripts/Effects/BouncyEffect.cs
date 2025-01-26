@@ -108,6 +108,7 @@ public class BouncyEffect : MonoBehaviour
     IEnumerator Reset() {
         yield return new WaitForSeconds(resetTime);
         for (int i = 0; i < transform.childCount; i++) {
+            transform.GetChild(i).position = originalPositions[i];
             delay[i] = maxDelay;
             comingBack[i] = false;
             done[i] = false;

@@ -22,6 +22,8 @@ public class LevelManager : MonoBehaviour
     public RectTransform rythmIndicatorL;
     public RectTransform rythmIndicatorR;
 
+    public JumperEffect[] jumpers;
+
     public GameObject goodIndicator;
     public GameObject badIndicator;
     public TMP_Text scoreText;
@@ -30,6 +32,13 @@ public class LevelManager : MonoBehaviour
 
     public Image rythmIndicatorImageL;
     public Image rythmIndicatorImageR;
+
+    int times;
+    public TextMeshProUGUI streakText;
+    double lastStreak;
+    double streak;
+    public Image streakImage;
+    public Sprite[] streakStates;
 
     public GameObject tileObject;
 
@@ -167,6 +176,17 @@ public class LevelManager : MonoBehaviour
                     catfishAnimator.SetBool("Wait", true);
                 }
             }
+            // - Easter Egg
+            if (UnityEngine.Random.Range(0f, 1f) < 0.00001) {
+                catfishAnimator.SetBool("EasterEgg", true);
+            }
+            if (catfishAnimator.GetBool("EasterEgg")) {
+                AnimatorStateInfo stateInfo = catfishAnimator.GetCurrentAnimatorStateInfo(0);
+                // Verifica si la animación ha terminado
+                if (stateInfo.IsName("EasterEgg") && stateInfo.normalizedTime >= 1f && !catfishAnimator.IsInTransition(0)) {
+                    catfishAnimator.SetBool("EasterEgg", false);
+                }
+            }
         }
         
         if (!hasClicked)
@@ -262,6 +282,7 @@ public class LevelManager : MonoBehaviour
         float fillAmount = (float)currentBeatDuration / (float)beatDuration;
         if(fillAmount <= currentHitMargin)
         {
+            times += 1;
             //Debug.Log("Good");
             StartCoroutine(ActivateAndDeactivate(goodIndicator));
             if (catfishAnimator) {
@@ -281,6 +302,28 @@ public class LevelManager : MonoBehaviour
             //
             rythmIndicatorImageL.color = new Color(0, 1, 0);
             rythmIndicatorImageR.color = new Color(0, 1, 0);
+            // 
+            foreach (JumperEffect jumper in jumpers) {
+                jumper.Play();
+            }
+            // Streak
+            streak = Math.Log10(times);
+            if (streak != lastStreak) {
+                if (streak > 0) {
+                    streakText.text = "x" + streak.ToString();
+                }
+                streakText.GetComponent<JumperEffect>().Play();
+            }
+            lastStreak = streak;
+            if (streak < 5) {
+                streakImage.sprite = streakStates[0];
+            } else if (streak >= 5 && streak < 12) {
+                streakImage.sprite = streakStates[1];
+            } else if (streak >= 12 && streak < 20) {
+                streakImage.sprite = streakStates[2];
+            } else if (streak >= 20) {
+                streakImage.sprite = streakStates[3];
+            }
         }
         else
         {
@@ -296,6 +339,11 @@ public class LevelManager : MonoBehaviour
 
     public void BadPulsation()
     {
+        times = 0;
+        streak = 0;
+        streakText.text = "";
+        streakImage.sprite = streakStates[0];
+
         //Debug.Log("Bad");
         StartCoroutine(ActivateAndDeactivate(badIndicator));
         // StartCoroutine(ActivateAndDeactivateAnimation("Angry"));

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0712494974c1cac49978f9ae423cc55b
+guid: 59acd98f52558794eb73b62e52296571
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,100 +108,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: comboExplotion-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 0
-        width: 77
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa524a76567960f41916d57fb91d37b7
-      internalID: 1522256921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: comboExplotion-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 0
-        width: 77
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00d2cdd44aabc594dba84398aab6f6e5
-      internalID: 929847295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: comboExplotion-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 0
-        width: 77
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb7fdbd219fd9034dbe39b5825563faf
-      internalID: 2087366950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: comboExplotion-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 73
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9eb78e2467f7c74dac5db5db2916372
-      internalID: 2084644316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4b49784e0037223459c7da881c1a0b28
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -210,11 +122,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      comboExplotion-Sheet_0: 1522256921
-      comboExplotion-Sheet_1: 929847295
-      comboExplotion-Sheet_2: 2087366950
-      comboExplotion-Sheet_3: 2084644316
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

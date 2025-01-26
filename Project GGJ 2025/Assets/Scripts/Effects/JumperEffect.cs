@@ -4,10 +4,12 @@ public class JumperEffect : MonoBehaviour
 {
 
     [SerializeField] bool onStart;
+    [SerializeField] float scale_low = 1.5f;
+    [SerializeField] float scale_mid = 1.3f;
+
     Vector3 startPosition;      // Posición inicial
-    Vector3 endPosition_1 = new Vector3(1.5f, 1.5f, 1.5f);        // Posición final
-    Vector3 endPosition_2 = new Vector3(1.3f, 1.3f, 1.3f);
-    Vector3 endPosition_3 = new Vector3(1.4f, 1.4f, 1.4f);
+    Vector3 endPosition_1;        // Posición final
+    Vector3 endPosition_2;
     public float duration = 0.25f;        // Duración del movimiento
     private float timeElapsed = 0f;    // Tiempo transcurrido
 
@@ -19,6 +21,8 @@ public class JumperEffect : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         startPosition = rectTransform.localScale;
+        endPosition_1 = Vector3.one * scale_low;
+        endPosition_2 = Vector3.one * scale_mid;
         if (onStart) {
             state = 0;
         }
@@ -56,15 +60,18 @@ public class JumperEffect : MonoBehaviour
         } else if (state == 2) {
             float t = timeElapsed / duration;
             float easedTime = FunctionsEffect.EaseInOut(t);
-            transform.localScale = Vector3.Lerp(endPosition_3, startPosition, easedTime);
+            transform.localScale = Vector3.Lerp(endPosition_2, startPosition, easedTime);
             // Incrementar el tiempo
             timeElapsed += Time.deltaTime;
             // Detener el movimiento cuando haya llegado al destino
             if (timeElapsed >= duration) {
                 timeElapsed = 0;
-                state = 4;
+                state = -1;
             }
         }
+    }
 
+    public void Play() {
+        state = 0;
     }
 }
