@@ -350,8 +350,14 @@ public class LevelManager : MonoBehaviour
             currentScore += 1 * (int)MathF.Pow(2, currentMusicIntensity); // TODO: Con multiplicadores
             streakText.text = "x" + (int)MathF.Pow(2, currentMusicIntensity);
             scoreText.text = "Score: " + currentScore;
-            // TODO: Hacerlo bien
-            scoreTextCool.text = "00" + currentScore;
+            //
+            int decimals = (int)Math.Floor(Math.Log10(currentScore) + 1);
+            string zeroes = "";
+            for(int i = 0; i < 4 - decimals; i++)
+            {
+                zeroes += "0";
+            }
+            scoreTextCool.text = zeroes + currentScore;
             // Bubble sounds
             bubbleEventEmitter.Play();
             bubbleEventEmitter.EventInstance.setParameterByName("Burbuja", 1);

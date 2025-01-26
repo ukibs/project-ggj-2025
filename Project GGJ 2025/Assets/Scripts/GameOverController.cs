@@ -9,7 +9,14 @@ public class GameOverController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        scoreText.text = "" + PlayerPrefs.GetInt("NewScore", 0);
+        int score = PlayerPrefs.GetInt("NewScore", 0);
+        int decimals = (int)Mathf.Floor(Mathf.Log10(score) + 1);
+        string zeroes = "";
+        for (int i = 0; i < 4 - decimals; i++)
+        {
+            zeroes += "0";
+        }
+        scoreText.text = zeroes + score;
     }
 
     // Update is called once per frame
