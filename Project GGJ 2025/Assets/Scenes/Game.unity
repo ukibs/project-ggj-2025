@@ -3196,6 +3196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catfishAnimator: {fileID: 1820623851}
+  bubbleAnimator: {fileID: 1822656529}
   rollRt: {fileID: 485807223}
   rollController: {fileID: 485807224}
   beatMarginIndicatorL: {fileID: 1652094708}

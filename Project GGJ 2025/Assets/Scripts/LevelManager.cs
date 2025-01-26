@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [Header("Components")]
     //public GameObject catfish;
     public Animator catfishAnimator;
+    public Animator bubbleAnimator;
     public RectTransform rollRt;
     public RollController rollController;
     //public Image beatFiller1;
@@ -216,6 +218,11 @@ public class LevelManager : MonoBehaviour
         {
             // Pierdes puntos
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameOver();
+        }
     }
 
     void GenerateTiles()
@@ -290,12 +297,27 @@ public class LevelManager : MonoBehaviour
         //}
         if (currentPerformance <= -5)
         {
-            // You lose
-            musicEventEmitter.Stop();
-            // Pez muerto
-            gameOver = true;
-            musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", 6);
+            GameOver();
         }
+    }
+
+    void GameOver()
+    {
+        // You lose
+        musicEventEmitter.Stop();
+        // Pez muerto
+        gameOver = true;
+        musicEventEmitter.EventInstance.setParameterByName("MusicIntensity", 6);
+        catfishAnimator.SetBool("Death", true);
+        bubbleAnimator.SetBool("Destroy", true);
+        PlayerPrefs.SetInt("NewScore", currentScore);
+        StartCoroutine(WaitAndGameOver());
+    }
+
+    IEnumerator WaitAndGameOver()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("GameOver");
     }
 
     public bool ExplodeBubble()
