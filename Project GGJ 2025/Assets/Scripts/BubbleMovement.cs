@@ -6,12 +6,12 @@ public class BubbleMovement : MonoBehaviour
 {
 
     bool collision = false;
-    Vector3 direction;
-    float rotation;
+    public Vector3 direction;
+    public float rotation;
     Image bubbleSprite;
     RectTransform bubbleRectTransform;
     Vector3 bounds;
-    [SerializeField] float speed = 10f;
+    public float speed = 10f;
     [SerializeField] float rotationSpeed = 4f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,7 +19,7 @@ public class BubbleMovement : MonoBehaviour
     {
         direction = UnityEngine.Random.insideUnitSphere * 5;
         direction.z = 0;
-        rotation = UnityEngine.Random.Range(-1, 1);
+        rotation = UnityEngine.Random.Range(1, 101) < 50 ? -1 : 1;
         // 
         bubbleSprite = GetComponent<Image>();
         bubbleRectTransform = bubbleSprite.GetComponent<RectTransform>();

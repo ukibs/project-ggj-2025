@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class HeadphonesStyle : MonoBehaviour
+public class ScaleEffect : MonoBehaviour
 {
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

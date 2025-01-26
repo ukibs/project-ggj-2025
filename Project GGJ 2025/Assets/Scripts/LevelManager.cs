@@ -78,11 +78,6 @@ public class LevelManager : MonoBehaviour
         //beatMarginFiller2.fillAmount = goodHitMargin;
         beatMarginIndicatorL.anchoredPosition = new Vector2(-currentHitMargin * 150,0);
         beatMarginIndicatorR.anchoredPosition = new Vector2(currentHitMargin * 150, 0);
-        //catfishAnimator = catfish.GetComponent<Animator>();
-        // statesDurations = new() {
-        //     {"Angry", timeAngry},
-        //     {"Happy", timeHappy}
-        // };
         currentTimeAngry = timeAngry;
         currentTimeHappy = timeHappy;
         currentTimeWait = timeWait;
@@ -146,32 +141,34 @@ public class LevelManager : MonoBehaviour
         rythmIndicatorR.anchoredPosition = new Vector2(((float)currentBeatDuration / (float)beatDuration * 150), 0);
         // Animations
         // - Animacion de felicidad
-        if (catfishAnimator.GetBool("Happy")) {
-            currentTimeHappy -= dt;
-            if (currentTimeHappy <= 0) {
-                catfishAnimator.SetBool("Happy", false);
+        if (catfishAnimator) {
+            if (catfishAnimator.GetBool("Happy")) {
+                currentTimeHappy -= dt;
+                if (currentTimeHappy <= 0) {
+                    catfishAnimator.SetBool("Happy", false);
+                }
             }
-        }
-        // - Animacion de enfado
-        if (catfishAnimator.GetBool("Angry")) {
-            currentTimeAngry -= dt;
-            if (currentTimeAngry <= 0) {
-                catfishAnimator.SetBool("Angry", false);
+            // - Animacion de enfado
+            if (catfishAnimator.GetBool("Angry")) {
+                currentTimeAngry -= dt;
+                if (currentTimeAngry <= 0) {
+                    catfishAnimator.SetBool("Angry", false);
+                }
             }
-        }
-        // - Animacion de espera
-        if (!catfishAnimator.GetBool("Angry") && !catfishAnimator.GetBool("Happy"))
-        {
-            if (currentTimeWait >= 0)
+            // - Animacion de espera
+            if (!catfishAnimator.GetBool("Angry") && !catfishAnimator.GetBool("Happy"))
             {
-                currentTimeWait -= dt;
-            }
-            else
-            {
-                catfishAnimator.SetBool("Wait", true);
+                if (currentTimeWait >= 0)
+                {
+                    currentTimeWait -= dt;
+                }
+                else
+                {
+                    catfishAnimator.SetBool("Wait", true);
+                }
             }
         }
-        //
+        
         if (!hasClicked)
         {
             // Pierdes puntos
@@ -257,7 +254,9 @@ public class LevelManager : MonoBehaviour
         //Debug.Log("Bubble exploded");
         // Reset wait time
         currentTimeWait = timeWait;
-        catfishAnimator.SetBool("Wait", false);
+        if (catfishAnimator) {
+            catfishAnimator.SetBool("Wait", false);
+        }
         // 
         hasClicked = true;
         float fillAmount = (float)currentBeatDuration / (float)beatDuration;
@@ -265,8 +264,10 @@ public class LevelManager : MonoBehaviour
         {
             //Debug.Log("Good");
             StartCoroutine(ActivateAndDeactivate(goodIndicator));
-            catfishAnimator.SetBool("Happy", true);
-            catfishAnimator.SetBool("Angry", false);
+            if (catfishAnimator) {
+                catfishAnimator.SetBool("Happy", true);
+                catfishAnimator.SetBool("Angry", false);
+            }
             currentTimeHappy = timeHappy;
             // StartCoroutine(ActivateAndDeactivateAnimation("Happy"));
             currentPerformance++;
@@ -298,8 +299,10 @@ public class LevelManager : MonoBehaviour
         //Debug.Log("Bad");
         StartCoroutine(ActivateAndDeactivate(badIndicator));
         // StartCoroutine(ActivateAndDeactivateAnimation("Angry"));
-        catfishAnimator.SetBool("Angry", true);
-        catfishAnimator.SetBool("Happy", false);
+        if (catfishAnimator) {
+            catfishAnimator.SetBool("Angry", true);
+            catfishAnimator.SetBool("Happy", false);
+        }
         currentTimeAngry = timeAngry;
         currentPerformance--;
         currentPerformance = Mathf.Clamp(currentPerformance, -5, (maxMusicIntensity * 5) + 1);
@@ -318,10 +321,4 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
     }
-
-    // IEnumerator ActivateAndDeactivateAnimation(string state) {
-    //     catfishAnimator.SetBool(state, true);
-    //     yield return new WaitForSeconds(statesDurations[state]);
-    //     catfishAnimator.SetBool(state, false);
-    // }
 }
