@@ -14,7 +14,7 @@ public class PlayButtonController : MonoBehaviour
     public bool changeScene;
     Animator animator;
     BubbleMovement bubbleMovement;
-    public TransitionController transitionController;
+    public InstructionsController instructionsController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,7 +48,7 @@ public class PlayButtonController : MonoBehaviour
                             if (!changeScene) {
                                 Destroy(gameObject);
                             } else if (transform.childCount == 0) {
-                                transitionController.GoTo("Game");
+                                instructionsController.Play();
                             }
                         }
                     }
