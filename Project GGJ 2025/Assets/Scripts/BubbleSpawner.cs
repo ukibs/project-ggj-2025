@@ -18,11 +18,16 @@ public class BubbleSpawner : MonoBehaviour
     void Update()
     {
         if (currentTimeSpawn <= 0) {
-            GameObject newBubble = Instantiate(bubble);
-            newBubble.transform.position = new Vector3(Random.Range(0, Screen.width), transform.position.y, 0);
-            newBubble.transform.SetParent(canvas);
-            newBubble.GetComponent<MoreBubbleMovement>().enabled = true;
-            newBubble.GetComponent<PlayButtonController>().enabled = true;
+            GameObject newBubbleParent = Instantiate(bubble);
+            GameObject newCatfish = newBubbleParent.transform.GetChild(0).gameObject;
+            GameObject newBubble = newBubbleParent.transform.GetChild(1).gameObject;
+
+            newBubbleParent.transform.position = new Vector3(Random.Range(0, Screen.width), transform.position.y, 0);
+            newBubbleParent.transform.SetParent(canvas);
+            newBubbleParent.GetComponent<MoreBubbleMovement>().enabled = true;
+            PlayButtonController playButtonController = newBubble.GetComponent<PlayButtonController>();
+            playButtonController.catfishAnimator = newCatfish.GetComponent<Animator>();
+            playButtonController.enabled = true;
             currentTimeSpawn = Random.Range(timeSpawnRange[0], timeSpawnRange[1]);
         } else {
             currentTimeSpawn -= Time.deltaTime;

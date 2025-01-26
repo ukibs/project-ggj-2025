@@ -34,8 +34,8 @@ public class BubbleController : MonoBehaviour
 
             bool correct = LevelManager.Instance.ExplodeBubble();
             if (!correct) {
-                // TODO: Activarlo cuando esté
-                //bubbleAnimator.SetBool("Cursed", true);
+                // TODO: Activarlo cuando este
+                bubbleAnimator.SetBool("Cursed", true);
             } else {
                 bubbleAnimator.SetBool("Explosion", true);
             }

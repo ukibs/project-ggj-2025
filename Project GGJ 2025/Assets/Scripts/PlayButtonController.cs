@@ -1,5 +1,4 @@
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +8,13 @@ public class PlayButtonController : MonoBehaviour
     public GameObject shakeGameObject;
     public Animator catfishAnimator;
     bool waitDeath = false;
+    bool exit = false;
+    public bool menu = false;
     bool pressed;
     public bool changeScene;
     Animator animator;
     BubbleMovement bubbleMovement;
+    public TransitionController transitionController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +26,17 @@ public class PlayButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (exit) {
+            // Obtén el AnimatorStateInfo de la animación actual
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            // Verifica si la animación ha terminado
+            if (stateInfo.IsName("Explosion")) {
+                if (stateInfo.normalizedTime >= 1f && !animator.IsInTransition(0)) {
+                    Application.Quit();
+                }
+            }
+            return;
+        }
         if (!waitDeath) {
             if (pressed) {
                 // Obtén el AnimatorStateInfo de la animación actual
@@ -34,17 +47,23 @@ public class PlayButtonController : MonoBehaviour
                         if (!catfishAnimator) {
                             if (!changeScene) {
                                 Destroy(gameObject);
-                            } else {
-                                SceneManager.LoadScene("Game");
+                            } else if (transform.childCount == 0) {
+                                transitionController.GoTo("Game");
                             }
                         }
                     }
                 }
                 if (catfishAnimator) {
-                    stateInfo = catfishAnimator.GetCurrentAnimatorStateInfo(0);
-                    if (stateInfo.IsName("Death") && stateInfo.normalizedTime >= 1f && !animator.IsInTransition(0)) {
+                    if (!menu) {
+                        stateInfo = catfishAnimator.GetCurrentAnimatorStateInfo(0);
+                        if (stateInfo.IsName("Death") && stateInfo.normalizedTime >= 1f && !animator.IsInTransition(0)) {
+                            catfishAnimator.AddComponent<PhyisicsEffect>();
+                            waitDeath = true;
+                        }
+                    } else {
                         catfishAnimator.AddComponent<PhyisicsEffect>();
-                        waitDeath = true;
+                        catfishAnimator.transform.SetParent(transform.parent.parent);
+                        Destroy(gameObject);
                     }
                 }
             }
@@ -57,7 +76,9 @@ public class PlayButtonController : MonoBehaviour
         pressed = true;
         animator.SetBool("Destroy", true);
         foreach (Transform child in transform) {
-            child.SetParent(transform.parent);
+            if (!changeScene) {
+                child.SetParent(transform.parent);
+            }
             child.gameObject.SetActive(false);
             PhyisicsEffect phyisicsEffect = child.AddComponent<PhyisicsEffect>();
             if (bubbleMovement) {
@@ -73,6 +94,21 @@ public class PlayButtonController : MonoBehaviour
         if (shakeGameObject) {
             shakeGameObject.GetComponent<ShakeEffect>().Play();
             shakeGameObject.GetComponent<ShakeEffect>().IncreaseMultiplier();
+        }
+    }
+
+    public void Exit() {
+        exit = true;
+        animator.SetBool("Destroy", true);
+        foreach (Transform child in transform) {
+            child.SetParent(transform.parent);
+            child.gameObject.SetActive(false);
+            PhyisicsEffect phyisicsEffect = child.AddComponent<PhyisicsEffect>();
+            if (bubbleMovement) {
+                phyisicsEffect.velocity = bubbleMovement.direction * bubbleMovement.speed;
+                phyisicsEffect.rotation = bubbleMovement.rotation;
+            }
+            child.gameObject.SetActive(true);
         }
     }
 }
