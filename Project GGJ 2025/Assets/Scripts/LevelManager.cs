@@ -324,7 +324,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         // You lose
         // musicEventEmitter.Stop();

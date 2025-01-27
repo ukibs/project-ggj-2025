@@ -1335,7 +1335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &713710376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2790,7 +2790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1552027586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3610,7 +3610,9 @@ MonoBehaviour:
   catfishAnimator: {fileID: 1820623851}
   menu: 0
   changeScene: 0
+  counterController: {fileID: 0}
   instructionsController: {fileID: 0}
+  levelManager: {fileID: 1799711571}
 --- !u!95 &1822656529
 Animator:
   serializedVersion: 7

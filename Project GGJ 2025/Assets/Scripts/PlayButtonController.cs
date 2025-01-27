@@ -16,6 +16,7 @@ public class PlayButtonController : MonoBehaviour
     Animator animator;
     BubbleMovement bubbleMovement;
     public InstructionsController instructionsController;
+    public LevelManager levelManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,6 +43,10 @@ public class PlayButtonController : MonoBehaviour
             if (pressed) {
                 // Obtén el AnimatorStateInfo de la animación actual
                 AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                if (levelManager)
+                {
+                    levelManager.GameOver();
+                }
                 // Verifica si la animación ha terminado
                 if (stateInfo.IsName("Explosion")) {
                     if (stateInfo.normalizedTime >= 1f && !animator.IsInTransition(0)) {
@@ -69,7 +74,7 @@ public class PlayButtonController : MonoBehaviour
                 }
             }
         } else if (!catfishAnimator) {
-            SceneManager.LoadScene("GameOver");
+            // SceneManager.LoadScene("GameOver");
         }
     }
 
